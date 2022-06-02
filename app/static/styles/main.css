@@ -18,6 +18,45 @@ button {
     font-family: 'Montserrat', sans-serif;
 }
 
+.home-text{
+    color:#ffffff;
+    text-align: center;
+}
+
+.home-profile{
+    display: flex;
+    height: 500px;
+    border: white 5px solid;
+    margin: 20px;
+    justify-content: space-between;
+}
+
+.home-item{
+    border-radius: 50%;
+    max-width: 100%;
+    max-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.profile-noah {
+    background: url(../img/noahprofile.jpg);
+    background-size: cover;
+}
+
+.profile-malik {
+    background: url(../img/malikprofile.jpg);
+    background-size: cover;
+}
+
+.profile-juan {
+    background: url(../img/juanprofile.jpg);
+    background-size: cover;
+}
+
 body {
     background-color: #000000;
     /* changed background */
