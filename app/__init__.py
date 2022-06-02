@@ -7,8 +7,8 @@ app = Flask(__name__)
 
 team = {'juan': {"name": "Juan Acosta", "university": "University of Toronto", "github": "https://github.com/jpablo2002", "linkedin": "https://www.linkedin.com/in/juanp-acosta/",
                  "visited": ["Canada", "Venezuela", "Spain", "England"], "skills": ["HTML", "CSS", "Javascript", "React", "Node.js", "MongoDB", "Python"]},
-        'malik': {},
-        'noah': {}
+        'malik': {"name": "Malik Baker", "university": "Boston University", "linkedin": "https://www.linkedin.com/in/malbaker/", "github": "https://github.com/noahromo"},
+        'noah': {"name": "Noah Romo", "university": "Florida State University", "linkedin": "https://www.linkedin.com/in/noah-romo/", "github": "https://www.github.com/malbaker/"}
         }
 
 
