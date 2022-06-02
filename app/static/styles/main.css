@@ -1,22 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
+/* 
+//////////////////////////////////////////////////////////////////////////////
+Default Styles
+*/
 
-p, h1, h2, h3, h4, h5, h6, button {
-    font-family: 'Share Tech', sans-serif;
+/* Imported font*/
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap%27');
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+    /* I changed this again - Noah */
+    font-family: "Share Tech", sans-serif;  
 }
 
 body {
-    background-color: #000000;  /* changed background */
+    background-color: #000000;
+    /* changed background */
     background-size: cover;
-    width: auto; 
+    width: auto;
     overflow-x: hidden;
-    font-family: 'Share Tech', sans-serif;
+    font-family: "Share Tech", serif;
     margin: 0px;
 }
 
 .nav-bar {
     width: 100%;
     display: inline-block;
-    background-color: #000000;  /* changed background */
+    background-color: #000000;
+    /* changed background */
     font-family: "Roboto", serif;
     font-weight: 700 !important;
     padding-top: 10px;
@@ -52,26 +68,28 @@ body {
 }
 
 .profile {
-    background-color: #000000 !important;  /* changed background */
+    background-color: #000000 !important;
+    /* changed background */
     text-align: center;
     height: 320px;
     margin-bottom: 50px;
 }
 
 .profile h1 {
-        font-size: 50px;
-        font-weight: 700;
-        color: white;
+    font-size: 60px;  /* Increased font size b/c of new font */
+    font-weight: 700;
+    color: white;
 }
 
 .profile img {
-        border-radius: 50%;
-        max-width: 100%;
-        max-height: 100%;
-        margin-left: auto;
-        margin-right: 300px;  /* changed right margin */
-        display: block;        
-        padding: 20px;
+    border-radius: 50%;
+    max-width: 100%;
+    max-height: 100%;
+    /*margin-left: auto;
+    margin-right: 400px;*/
+    /* changed right margin */
+    display: block;
+    padding: 20px;
 }
 
 .profile .profile-picture {
@@ -79,26 +97,152 @@ body {
     height: 200px;
 }
 
-.banner {
-    padding: 20px 0px 50px 0px;
-    height: 150px;
-    background-color: #1d539f;
+/* 
+//////////////////////////////////////////////////////////////////////////////
+Intro Section Styling
+*/
+
+header {
+    border-bottom: 2px solid white;
+    margin-bottom: 3rem;
 }
 
-.banner .logo {
-    max-width:180px;
-    max-height:60px;
-    width: auto;
-    height: auto;
-}
-
-.banner .title {
+h2 span {
     color: white;
-    font-size: 50px;
-    font-weight: 700;
 }
 
-/* NEW FEATURES */
+.profile-picture img {
+    display: inline-block;
+    margin: 0;
+}
+
+.profile-picture {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 150px;  /* Increased from 30 to 150*/
+}
+
+.intro h1 {
+    text-align: left;
+    overflow: hidden;
+    margin-bottom: 0.25rem;
+}
+
+.intro {
+    text-align: left;
+}
+
+.intro .button {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    color: white;
+    background: none;
+    border: 2px solid white;
+    padding: 0 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.intro .button p {
+    position: relative;
+    z-index: 1;
+}
+
+.intro .button:before {
+    z-index: 0;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: -100%;
+    top: 0;
+    background-color: rgb(0, 201, 201);
+    transition: all 1s ease;
+}
+
+.intro .button:hover::before {
+    left: 0;
+}
+
+.intro span {
+    transform: translateY(0);
+    opacity: 0;
+    display: inline-block;
+    animation: popUp 250ms ease forwards;
+    animation-delay: calc(var(--order) * 250ms);
+    transition: all 0.25s ease 0s;
+}
+
+.intro span:hover {
+    color: cyan;
+}
+
+.more {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.socials {
+    display: flex;
+    background-color: rgba(100, 100, 100, 0.9);
+}
+
+.socials img {
+    max-width: 50px;
+    max-height: 100%;
+}
+
+.socials a {
+    display: inline-block;
+    max-width: 50px;
+    padding: 18% 10px;
+    text-indent: 1000px;
+    transition: all 0.4s linear 0s;
+}
+
+.socials a.linkedin {
+    background: url("../img/linkedin.png") no-repeat center;
+    background-size: 76%;
+}
+
+a.github {
+    background: url("../img/github.png") no-repeat center;
+    background-size: 75%;
+}
+
+.socials a:hover {
+    background-color: rgba(173, 173, 173, 0.9);
+}
+
+@keyframes popUp {
+    0% {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 682px) {
+    .intro span {
+        font-size: 2rem;
+    }
+
+    .intro {
+        line-height: 2rem;
+    }
+}
+
+/* 
+//////////////////////////////////////////////////////////////////////////////
+About/Edu Section Styling
+*/
+
 .container {
     display: flex;  /* hortizontally stacks children */
     justify-content: center;  /* centers boxes */
@@ -107,10 +251,12 @@ body {
 }
 
 .about, .edu {
-    background-color: white;
+    color: white;
+    background: none;
+    border: 2px solid white;
     width: 400px;
-    margin: 100px;
-    border-radius: 15px;
+    margin: 125px;
+    border-radius: 10px;
 }
 
 .about h2 {
@@ -166,8 +312,9 @@ body {
 }
 
 .about:hover, .edu:hover {
-    background-color: rgb(62, 62, 62);
-    color: white;
+    /*background-color: black;*/
+    color: cyan;
+    /*color: white;*/
     transform: scale(1.03);
     transition: all 1s ease;
 }

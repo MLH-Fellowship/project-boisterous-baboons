@@ -14,41 +14,57 @@
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
 
-    <link lang='sass' rel="stylesheet" href="./static/styles/main.css">
-    <link rel='icon' href='./static/img/favicon.ico' type='image/x-icon' />
+    <link lang='sass' rel="stylesheet" href="../static/styles/main.css">
+    <link rel='icon' href='../static/img/favicon.ico' type='image/x-icon' />
     <title>{{ title }}</title>
 </head>
 
 <body>
     <header class="nav-bar">
         <div class="nav-content">
-            <a href="/"> 
-                <div class="nav-logo">
-                    <img src="./static/img/logo.svg" />
-                </div>
-            </a>
+            <div class="nav-logo">
+                <a href="/">
+                    <img src="../static/img/logo.svg" />
+                </a>
+            </div>
         </div>
     </header>
 
     <div class="profile">
         <div id="profile-picture" class="profile-picture">
-            <img src="./static/img/noahprofile.jpg">
+            <div class="intro">
+                <h1><span style="--order: 1">Hi,</span></h1>
+                <h1><span style="--order: 2">I'm</span>
+                    {% for word in name.split(' ') %}
+                    {% if loop.last %}
+                    <span style="--order: {{2 + loop.index}}">{{ word }},</span>
+                    {% endif %}
+                    {% if not loop.last %}
+                    <span style="--order: {{2 + loop.index}}">{{ word }}</span>
+                    {% endif%}
+                    {% endfor %}
+                </h1>
+                <h1><span style="--order: 5">MLH</span> <span style="--order: 6">Fellow</span></h1>
+                <br>
+                <div class="more">
+                    <div class="button">
+                        <p>Learn more!</p>
+                    </div>
+                    <div class="socials">
+                        <a href="{{ linkedin }}" target="_blank" class="linkedin">Linkedin</a>
+                        <a href="{{ github }}" target="_blank" class="github">Github</a>
+                    </div>
+                </div>
+            </div>
+            <img src="../static/img/{{ member }}profile.jpg">
         </div>
-        <h1>{{ title }}</h1>
     </div>
 
-    <section class="container">   <!-- START OF NEW FEATURES -->
+    <section class="container">   <!-- START OF ABOUT/EDU -->
         <div class="about">  <!-- ABOUT MYSELF -->
             <h2>About</h2>
             <p>  <!-- Input data -->
-                Rising junior at Florida State University in pursuit of a 
-                Bachelor of Arts in Computer Science as well as a minor in innovation. 
-                App development is like trying to learn chess. So many different ideas/moves 
-                to pick from. I started as a beginner. After playing a few games each day, 
-                I've developed into a pretty decent player. Soon enough I'll be a master. 
-                I'm interested in tech entrepreneurship, fintech, mobile dev, machine learning
-                applications, and decentralized applications. "The people who are crazy enough 
-                to think that they can change the world are the ones who do." - Steve Jobs
+                {{ about }}
             </p>
         </div>
 
@@ -56,24 +72,26 @@
             <h2>Education</h2>
             <div class="arrange-horizontally"> 
                 <div class="edu-image">  
-                    <img src="./static/img/fsu-seal.jpeg">  <!-- Input data -->
+                    <img src="../static/img/fsu-seal.jpeg">  <!-- Input data -->
                 </div>
                 <div>
                     <p class="university-name">
-                        Florida State University  <!-- Input data -->
+                        {{ university }}  <!-- Input data -->
                     </p>
                     <p class="degree">
-                        BA, Computer Science  <!-- Input data -->
+                        {{ degree }}  <!-- Input data -->
                     </p>
                     <p class="year">
-                        2020-2024  <!-- Input data -->
+                        {{ years }}  <!-- Input data -->
                     </p>
                 </div>
             </div>
             <p class="activites">
-                Activities: Google Developer Student Club, Beta Theta Pi, FSU Boxing  <!-- Input data -->
+                {{ activities }}  <!-- Input data -->
             </p>
         </div>
     </section>
+
 </body>
+
 </html>
