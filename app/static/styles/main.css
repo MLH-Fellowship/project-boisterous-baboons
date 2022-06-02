@@ -63,7 +63,7 @@ body {
     background-size: cover;
     width: auto;
     overflow-x: hidden;
-    font-family: "Roboto", serif;
+    font-family: "Share Tech", serif;
     margin: 0px;
 }
 
@@ -115,7 +115,7 @@ body {
 }
 
 .profile h1 {
-    font-size: 50px;
+    font-size: 60px;  /* Increased font size b/c of new font */
     font-weight: 700;
     color: white;
 }
@@ -124,8 +124,8 @@ body {
     border-radius: 50%;
     max-width: 100%;
     max-height: 100%;
-    margin-left: auto;
-    margin-right: 300px;
+    /*margin-left: auto;
+    margin-right: 400px;*/
     /* changed right margin */
     display: block;
     padding: 20px;
@@ -159,7 +159,7 @@ h2 span {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 150px;  /* Increased from 30 to 150*/
 }
 
 .intro h1 {
@@ -275,4 +275,85 @@ a.github {
     .intro {
         line-height: 2rem;
     }
+}
+
+/* 
+//////////////////////////////////////////////////////////////////////////////
+About/Edu Section Styling
+*/
+
+.container {
+    display: flex;  /* hortizontally stacks children */
+    justify-content: center;  /* centers boxes */
+    flex-wrap: wrap;  /* moves elements under each other if they don't fit */
+
+}
+
+.about, .edu {
+    color: white;
+    background: none;
+    border: 2px solid white;
+    width: 400px;
+    margin: 125px;
+    border-radius: 10px;
+}
+
+.about h2 {
+    font-size: 50px;
+    text-align: center;
+}
+
+.about p {
+    font-size: 20px;
+    margin-left: 30px;
+    margin-right: 30px
+}
+
+.edu h2 {
+    font-size: 50px;
+    text-align: center;
+}
+
+.edu img {
+    border-radius: 50%;
+    max-width: 100px;
+    max-height: 100px;
+    margin-left: 30px;
+    margin-bottom: 0;
+}
+
+.arrange-horizontally > * {
+    display: inline-block;
+    text-align: center;
+}
+
+.university-name {
+    font-size: 20px;
+    margin-left: 30px;
+    font-weight: bold;
+}
+
+.degree, .year {
+    font-size: 16px;
+    margin-left: 30px;
+}
+
+.year {
+    font-size: 14px;
+    margin-left: 30px;
+    font-weight:lighter
+}
+
+.activites {
+    font-size: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.about:hover, .edu:hover {
+    /*background-color: black;*/
+    color: cyan;
+    /*color: white;*/
+    transform: scale(1.03);
+    transition: all 1s ease;
 }

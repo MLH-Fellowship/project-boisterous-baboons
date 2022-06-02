@@ -59,6 +59,39 @@
             <img src="../static/img/{{ member }}profile.jpg">
         </div>
     </div>
+
+    <section class="container">   <!-- START OF ABOUT/EDU -->
+        <div class="about">  <!-- ABOUT MYSELF -->
+            <h2>About</h2>
+            <p>  <!-- Input data -->
+                {{ about }}
+            </p>
+        </div>
+
+        <div class="edu">  <!-- EDUCATION -->
+            <h2>Education</h2>
+            <div class="arrange-horizontally"> 
+                <div class="edu-image">  
+                    <img src="../static/img/fsu-seal.jpeg">  <!-- Input data -->
+                </div>
+                <div>
+                    <p class="university-name">
+                        {{ university }}  <!-- Input data -->
+                    </p>
+                    <p class="degree">
+                        {{ degree }}  <!-- Input data -->
+                    </p>
+                    <p class="year">
+                        {{ years }}  <!-- Input data -->
+                    </p>
+                </div>
+            </div>
+            <p class="activites">
+                {{ activities }}  <!-- Input data -->
+            </p>
+        </div>
+    </section>
+
 </body>
 
 </html>
