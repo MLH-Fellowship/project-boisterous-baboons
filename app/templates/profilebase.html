@@ -27,10 +27,24 @@
                     <img src="../static/img/logo.svg" />
                 </a>
             </div>
+            <div class="menu">
+                <div class="burger-button">
+                    <div class="burger">
+
+                    </div>
+                </div>
+                <div class="slide-menu">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="#education">About & Education</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </header>
 
-    <div class="profile">
+    <div class="profile section">
         <div id="profile-picture" class="profile-picture">
             <div class="intro">
                 <h1><span style="--order: 1">Hi,</span></h1>
@@ -60,38 +74,58 @@
         </div>
     </div>
 
-    <section class="container">   <!-- START OF ABOUT/EDU -->
-        <div class="about">  <!-- ABOUT MYSELF -->
+    <section class="container section">
+        <!-- START OF ABOUT/EDU -->
+        <div class="about">
+            <!-- ABOUT MYSELF -->
             <h2>About</h2>
-            <p>  <!-- Input data -->
+            <p>
+                <!-- Input data -->
                 {{ about }}
             </p>
         </div>
 
-        <div class="edu">  <!-- EDUCATION -->
+        <div class="edu" id="education">
+            <!-- EDUCATION -->
             <h2>Education</h2>
-            <div class="arrange-horizontally"> 
-                <div class="edu-image">  
-                    <img src="../static/img/{{ seal }}-seal.jpg">  <!-- Input data -->
+            <div class="arrange-horizontally">
+                <div class="edu-image">
+                    <img src="../static/img/{{ seal }}-seal.jpg"> <!-- Input data -->
                 </div>
                 <div>
                     <p class="university-name">
-                        {{ university }}  <!-- Input data -->
+                        {{ university }}
+                        <!-- Input data -->
                     </p>
                     <p class="degree">
-                        {{ degree }}  <!-- Input data -->
+                        {{ degree }}
+                        <!-- Input data -->
                     </p>
                     <p class="year">
-                        {{ years }}  <!-- Input data -->
+                        {{ years }}
+                        <!-- Input data -->
                     </p>
                 </div>
             </div>
             <p class="activites">
-                {{ activities }}  <!-- Input data -->
+                {{ activities }}
+                <!-- Input data -->
             </p>
         </div>
     </section>
 
 </body>
+<script>
+    let menuOpen = false;
+    const burgerButton = document.querySelector('.burger-button');
+    const menu = document.querySelector('.menu');
+
+    burgerButton.addEventListener('click', (e) => {
+        console.log(e.target);
+        menu.classList.toggle('open');
+    })
+
+
+</script>
 
 </html>

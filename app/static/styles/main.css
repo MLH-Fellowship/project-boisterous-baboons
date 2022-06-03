@@ -18,12 +18,12 @@ button {
     font-family: 'Share Tech', sans-serif;
 }
 
-.home-text{
-    color:#ffffff;
+.home-text {
+    color: #ffffff;
     text-align: center;
 }
 
-.home-profile{
+.home-profile {
     display: flex;
     height: 500px;
     border: white 5px solid;
@@ -31,7 +31,7 @@ button {
     justify-content: space-between;
 }
 
-.home-item{
+.home-item {
     border-radius: 50%;
     max-width: 100%;
     max-height: 100%;
@@ -74,7 +74,6 @@ body {
     /* changed background */
     font-family: "Roboto", serif;
     font-weight: 700 !important;
-    padding-top: 10px;
 }
 
 .nav-content .logo-touch-target {
@@ -115,7 +114,8 @@ body {
 }
 
 .profile h1 {
-    font-size: 60px;  /* Increased font size b/c of new font */
+    font-size: 60px;
+    /* Increased font size b/c of new font */
     font-weight: 700;
     color: white;
 }
@@ -136,12 +136,122 @@ body {
     height: 200px;
 }
 
+/*
+//////////////////////////////////////////////////////////////////////////////
+Header/Nav Styling
+*/
+
+.section {
+    height: 100vh;
+    /* scroll-snap-align: center; */
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.burger-button {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 56px;
+    cursor: pointer;
+    border: 2px solid white;
+    border-bottom: none;
+    border-right: none;
+    transition: all 0.5s ease;
+}
+
+.burger {
+    z-index: 2;
+    position: relative;
+    width: 35px;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+}
+
+.burger::after,
+.burger::before {
+    content: "";
+    position: absolute;
+    width: 35px;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+}
+
+.burger::before {
+    transform: translateY(-12px);
+}
+
+.burger::after {
+    transform: translateY(12px);
+}
+
+.menu.open .burger::before {
+    background-color: black;
+    transform: rotateZ(45deg);
+}
+
+.menu.open .burger {
+    background: transparent;
+}
+
+.menu.open .burger::after {
+    background-color: black;
+    transform: rotateZ(-45deg);
+}
+
+.slide-menu {
+    position: absolute;
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    z-index: 0;
+    top: 0;
+    right: -220px;
+    color: black;
+    background-color: #fff;
+    transition: right 0.5s ease;
+}
+
+.slide-menu ul {
+    list-style: none;
+}
+
+.slide-menu a {
+    display: inline-block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.menu.open .slide-menu {
+    right: 0;
+}
+
+
+
+
+
 /* 
 //////////////////////////////////////////////////////////////////////////////
 Intro Section Styling
 */
 
 header {
+    position: relative;
     border-bottom: 2px solid white;
     margin-bottom: 3rem;
 }
@@ -150,16 +260,22 @@ h2 span {
     color: white;
 }
 
+.profile {
+    height: 100vh;
+}
+
 .profile-picture img {
     display: inline-block;
     margin: 0;
+    transform: scale(1.5, 1.5);
 }
 
 .profile-picture {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 150px;  /* Increased from 30 to 150*/
+    margin-top: 150px;
+    /* Increased from 30 to 150*/
 }
 
 .intro h1 {
@@ -211,7 +327,7 @@ h2 span {
     display: inline-block;
     animation: popUp 250ms ease forwards;
     animation-delay: calc(var(--order) * 250ms);
-    transition: all 0.25s ease 0s;
+    transition: color 0.5s ease 0s;
 }
 
 .intro span:hover {
@@ -237,14 +353,14 @@ h2 span {
 .socials a {
     display: inline-block;
     max-width: 50px;
-    padding: 18% 10px;
-    text-indent: 1000px;
-    transition: all 0.4s linear 0s;
+    padding: 25px 10px;
+    text-indent: 2000px;
+    transition: background-color 0.4s linear 0s;
 }
 
 .socials a.linkedin {
     background: url("../img/linkedin.png") no-repeat center;
-    background-size: 76%;
+    background-size: 75%;
 }
 
 a.github {
@@ -283,13 +399,17 @@ About/Edu Section Styling
 */
 
 .container {
-    display: flex;  /* hortizontally stacks children */
-    justify-content: center;  /* centers boxes */
-    flex-wrap: wrap;  /* moves elements under each other if they don't fit */
+    display: flex;
+    /* hortizontally stacks children */
+    justify-content: center;
+    /* centers boxes */
+    flex-wrap: wrap;
+    /* moves elements under each other if they don't fit */
 
 }
 
-.about, .edu {
+.about,
+.edu {
     color: white;
     background: none;
     border: 2px solid white;
@@ -322,7 +442,7 @@ About/Edu Section Styling
     margin-bottom: 0;
 }
 
-.arrange-horizontally > * {
+.arrange-horizontally>* {
     display: inline-block;
     text-align: center;
 }
@@ -333,7 +453,8 @@ About/Edu Section Styling
     font-weight: bold;
 }
 
-.degree, .year {
+.degree,
+.year {
     font-size: 16px;
     margin-left: 30px;
 }
@@ -341,7 +462,7 @@ About/Edu Section Styling
 .year {
     font-size: 14px;
     margin-left: 30px;
-    font-weight:lighter
+    font-weight: lighter
 }
 
 .activites {
@@ -350,7 +471,8 @@ About/Edu Section Styling
     margin-right: 30px;
 }
 
-.about:hover, .edu:hover {
+.about:hover,
+.edu:hover {
     /*background-color: black;*/
     color: cyan;
     /*color: white;*/
