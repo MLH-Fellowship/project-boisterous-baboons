@@ -163,9 +163,7 @@ Header/Nav Styling
 
 html {
     scroll-behavior: smooth;
-}
-
-body {
+    /* NOTE: scroll-snap-type causes a bug that allows scrolling up outside of the page. Will be needed later so left for now and will be resolved later.*/
     scroll-snap-type: y mandatory;
 }
 
