@@ -13,7 +13,7 @@ team = {'juan': {"firstname": "Juan's",
                  "github": "https://github.com/jpablo2002", 
                  "linkedin": "https://www.linkedin.com/in/juanp-acosta/", 
                  "activities": "",
-                 "visited": ["Canada", "Venezuela", "Spain", "England", "Peru", "USA"], 
+                 "visited": [["Canada", [56.13, -106.34]], ["Venezuela", [6.423, -66.58]], ["Spain", [40.46, -3.749]], ["England", [52.35, -1.17]], ["Peru", [-9.18, -75.0]], ["USA", [37.09, -95.71]]], 
                  "skills": ["HTML", "CSS", "Javascript", "React", "Node.js", "MongoDB", "Python"], 
                  "about": " ", 
                  "seal": "toronto"},
@@ -25,7 +25,7 @@ team = {'juan': {"firstname": "Juan's",
                   "linkedin": "https://www.linkedin.com/in/malbaker/", 
                   "github": "https://www.github.com/malbaker/", 
                   "activities": "Activities: BUILDS (BU Innovation Lab and Design Space)", 
-                  "visited": ["USA", "Jamaica"], 
+                  "visited": [["USA", [37.09, -95.71]], ["Jamaica", [18.1, -77.29]]], 
                   "skills": ["Java", "Python", "C", "Linux", "Git", "Bash", "HTML", "CSS", "Bash"], 
                   "about": "I am currently a rising Junior at Boston University pursuing my Bachelor's degree in Computer Science. Within the scope of technology, my passions include open-source software, web development and systems engineering. Outside of that I enjoy listening to music, watching movies, playing the guitar, or tinkering with my custom-built PC or keyboard.", 
                   "seal": "boston"},
@@ -37,7 +37,8 @@ team = {'juan': {"firstname": "Juan's",
                  "linkedin": "https://www.linkedin.com/in/noah-romo/", 
                  "github": "https://github.com/noahromo", 
                  "activities": "Activities: Google Developer Student Club, Beta Theta Pi, FSU Boxing", 
-                 "visited": ["Brazil", "Mexico", "Germany", "England", "Venezuela", "Dominican Republic", "Canada"], 
+                 "visited": [["Brazil", [-14.235, -51.925]], ["Mexico", [23.63, -102.5]], ["Germany", [51.16, 10.45]], ["England", [52.35, -1.17]],
+                             ["Venezuela", [6.423, -66.58]], ["Dominican Republic", [18.73, -70.16]], ["Canada", [56.13, -106.34]]], 
                  "skills": ["Python", "Swift", "C++", "HTML", "CSS", "Javascript"], 
                  "about": "Hello! I'm a junior at Florida State University in pursuit of a Bachelor of Arts in Computer Science and a minor in innovation. App development is like trying to learn chess. There are so many different strategies. I started out as a beginner. By now I've developed into a pretty decent player. And soon enough I'll be a master! I'm interested in tech entrepreneurship, fintech, mobile development, machine learning, and decentralized applications. Currently seeking start up partners to join me on this journey. \"The people who are crazy enough to think that they can change the world are the ones who do.\" - Steve Jobs", 
                  "seal": "fsu"}
@@ -66,3 +67,10 @@ def member(member):
                            about=person["about"],
                            seal=person["seal"],
                            firstname=person["firstname"])
+
+
+@app.route('/visited/<member>')
+def visited(member):
+    person = team[member]
+    return person
+
