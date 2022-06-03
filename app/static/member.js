@@ -20,7 +20,7 @@ L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{
 const colours = {
     "juan": "violet",
     "noah": "blue",
-    "malik": "green"
+    "malik": "orange"
 }
 
 let visited;
