@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta property="og:title" content="Personal Portfolio">
-        <meta property="og:description" content="My Personal Portfolio">
-        <meta property="og:url" content="{{ url }}">
-    
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link
-            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-            rel="stylesheet">
-    
-        <link lang='sass' rel="stylesheet" href="../static/styles/main.css">
-        <link rel='icon' href='../static/img/favicon.ico' type='image/x-icon' />
-        <title>{{ title }}</title>
-    </head>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:title" content="Personal Portfolio">
+    <meta property="og:description" content="My Personal Portfolio">
+    <meta property="og:url" content="{{ url }}">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <link lang='sass' rel="stylesheet" href="../static/styles/home.css">
+    <link rel='icon' href='../static/img/favicon.ico' type='image/x-icon' />
+    <title>{{ title }}</title>
+</head>
 
 <body>
     <header class="nav-bar">
@@ -29,14 +30,34 @@
         </div>
     </header>
 
-    <h1 class="home-text">We are the Boisterous Baboons</h1>
-    <h2 class="home-text">Click our faces to learn more about us!</h2>
-
+    <img src="../static/img/baboon.png" class="baboon">
     <div class="home-profile">
-        <a class="home-item profile-juan" href="/member/juan"></a>
-        <a class="home-item profile-malik" href="/member/malik"></a>
-        <a class="home-item profile-noah" href="/member/noah"></a>
+        <div class="person">
+            <h1>Juan</h1>
+            <img src="../static/img/juanprofile.jpg" alt="juan">
+            <br>
+            <div class="button">
+                <a href="/member/juan">Learn more!</a>
+            </div>
+        </div>
+        <div class="person">
+            <h1>Malik</h1>
+            <img src="../static/img/malikprofile.jpg" alt="malik">
+            <br>
+            <div class="button">
+                <a href="/member/malik">Learn more!</a>
+            </div>
+        </div>
+        <div class="person">
+            <h1>Noah</h1>
+            <img src="../static/img/noahprofile.jpg" alt="noah">
+            <br>
+            <div class="button">
+                <a href="/member/noah">Learn more!</a>
+            </div>
+        </div>
     </div>
-    
+
 </body>
+
 </html>

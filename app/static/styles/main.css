@@ -6,6 +6,10 @@ Default Styles
 /* Imported font*/
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap%27');
 
+html {
+    box-sizing: border-box;
+}
+
 p,
 h1,
 h2,
@@ -69,11 +73,18 @@ body {
 
 .nav-bar {
     width: 100%;
-    display: inline-block;
+    display: block;
+    position: fixed;
+    top: 0;
     background-color: #000000;
     /* changed background */
     font-family: "Roboto", serif;
     font-weight: 700 !important;
+    border-bottom: 2px solid white;
+}
+
+.nav-content img {
+    height: 60px;
 }
 
 .nav-content .logo-touch-target {
@@ -106,6 +117,7 @@ body {
 }
 
 .profile {
+    position: relative;
     background-color: #000000 !important;
     /* changed background */
     text-align: center;
@@ -132,6 +144,8 @@ body {
 }
 
 .profile .profile-picture {
+    position: relative;
+    top: 0;
     margin-bottom: 30px;
     height: 200px;
 }
@@ -143,11 +157,15 @@ Header/Nav Styling
 
 .section {
     height: 100vh;
-    /* scroll-snap-align: center; */
+    scroll-snap-align: center;
+    box-sizing: border-box;
 }
 
 html {
     scroll-behavior: smooth;
+}
+
+body {
     scroll-snap-type: y mandatory;
 }
 
@@ -170,8 +188,12 @@ html {
     transition: all 0.5s ease;
 }
 
+.nav-bar {
+    z-index: 100;
+}
+
 .burger {
-    z-index: 2;
+    z-index: 10;
     position: relative;
     width: 35px;
     height: 4px;
@@ -218,7 +240,7 @@ html {
     padding-top: 50px;
     padding-right: 30px;
     padding-bottom: 10px;
-    z-index: 0;
+    z-index: 4;
     top: 0;
     right: -220px;
     color: black;
@@ -250,18 +272,12 @@ html {
 Intro Section Styling
 */
 
-header {
-    position: relative;
-    border-bottom: 2px solid white;
-    margin-bottom: 3rem;
-}
-
 h2 span {
     color: white;
 }
 
 .profile {
-    height: 100vh;
+    padding-top: 200px;
 }
 
 .profile-picture img {
@@ -274,7 +290,6 @@ h2 span {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 150px;
     /* Increased from 30 to 150*/
 }
 
