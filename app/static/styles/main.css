@@ -25,6 +25,7 @@ button {
 .home-text {
     color: #ffffff;
     text-align: center;
+    font-size: 50px;  /* Increased home page header font - noah */
 }
 
 .home-profile {
@@ -119,20 +120,18 @@ body {
 .profile {
     position: relative;
     background-color: #000000 !important;
-    /* changed background */
     text-align: center;
     height: 320px;
     margin-bottom: 50px;
 }
 
 .profile h1 {
-    font-size: 60px;
-    /* Increased font size b/c of new font */
+    font-size: 60px; 
     font-weight: 700;
     color: white;
 }
 
-.profile img {
+.profile img {  /* positioning more to the left */
     border-radius: 50%;
     max-width: 100%;
     max-height: 100%;
@@ -141,6 +140,7 @@ body {
     /* changed right margin */
     display: block;
     padding: 20px;
+    transform: translateX(-80px);
 }
 
 .profile .profile-picture {
@@ -436,14 +436,11 @@ a.github {
 About/Edu Section Styling
 */
 
-.container {
-    display: flex;
-    /* hortizontally stacks children */
-    justify-content: center;
-    /* centers boxes */
-    flex-wrap: wrap;
-    /* moves elements under each other if they don't fit */
-
+.about-edu-container {
+    display: flex;  /* hortizontally stacks children */
+    justify-content: center;  /* centers boxes */
+    flex-wrap: wrap;  /* moves elements under each other if they don't fit */
+    margin-bottom: 70px;
 }
 
 .about,
@@ -500,7 +497,7 @@ About/Edu Section Styling
 .year {
     font-size: 14px;
     margin-left: 30px;
-    font-weight: lighter
+    font-weight:lighter;
 }
 
 .activites {
@@ -509,11 +506,113 @@ About/Edu Section Styling
     margin-right: 30px;
 }
 
-.about:hover,
-.edu:hover {
-    /*background-color: black;*/
-    color: cyan;
-    /*color: white;*/
-    transform: scale(1.03);
+.about:hover, .edu:hover, .experiences:hover {
+    transform: scale(1.05);
+    transition: all 1s ease;
+}
+
+/* 
+//////////////////////////////////////////////////////////////////////////////
+Experiences Section Styling
+*/
+
+.experiences {
+    color: white;
+    background: none;
+    border: 2px solid white;
+    width: 1060px;
+    margin: auto;
+    border-radius: 10px;
+    margin-bottom: 150px;
+}
+
+.experiences h2 {
+    font-size: 50px;
+    text-align: center;
+}
+
+.experiences p {
+    font-size: 20px;
+    margin-left: 30px;
+    margin-right: 30px
+}
+
+/* 
+//////////////////////////////////////////////////////////////////////////////
+Projects Section Styling
+*/
+
+.projects {
+    color: white;
+    background: none;
+    border: 2px solid white;
+    height: 750px;
+    width: 1060px;
+    margin: auto;
+    border-radius: 10px;
+    margin-bottom: 100px;
+}
+
+.projects h2 {
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.project-list {
+    display: flex;  /* hortizontally stacks children */
+    justify-content: center;  /* centers boxes */
+    flex-wrap: wrap;  /* moves elements under each other if they don't fit */
+    margin-bottom: 70px;
+}
+
+.first, .second {
+    color: white;
+    background: none;
+    border: 2px solid white;
+    width: 300px;
+    margin: 100px;
+    border-radius: 10px;
+}
+
+.projects h3 {
+    font-size: 30px;
+    text-align: center;
+}
+
+.projects p {
+    font-size: 18px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.project-image {
+    height: 180px;
+    margin-bottom: 20px;
+    background-size: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.weather-image {
+    background-image: url('/static/img/project-images/weather-app.jpg');  /* Can't use .. because starting path search from css file */
+}
+
+.simonsays-image {
+    background-image: url('/static/img/project-images/simon-says.jpg');  /* Can't use .. because starting path search from css file */
+}
+
+.project-link {
+    background-color: rgb(99, 94, 94);
+    color: white;
+    padding: 10px 20px;
+    display: block;
+    text-align: center;
+    margin: 20px 50px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.first:hover, .second:hover {
+    transform: scale(1.4);
     transition: all 1s ease;
 }
