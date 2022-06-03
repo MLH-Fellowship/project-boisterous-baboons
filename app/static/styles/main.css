@@ -517,3 +517,35 @@ About/Edu Section Styling
     transform: scale(1.03);
     transition: all 1s ease;
 }
+
+/* Map Styling */
+#map {
+    position: relative;
+    top: 0;
+    height: 80vh;
+    width: 80%;
+    margin: auto;
+    z-index: 1;
+}
+
+.map-container {
+    position: relative;
+}
+
+.map-label {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    background-color: rgb(193, 193, 193);
+    width: 80%;
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.section {
+    height: calc(100vh - 60px);
+    margin-top: 60px;
+}
