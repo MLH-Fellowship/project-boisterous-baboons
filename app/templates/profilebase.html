@@ -88,19 +88,14 @@ Html
         {% endblock %}
     </div>
 
-    <section class="container section">
-        <!-- START OF ABOUT/EDU -->
-        <div class="about">
-            <!-- ABOUT MYSELF -->
-            <h2>About</h2>
-            <p>
-                <!-- Input data -->
+    <section class="about-edu-container">   <!-- START OF ABOUT/EDU -->
+        <div class="about">  <!-- ABOUT MYSELF -->
+            <h2>About Me</h2>
+            <p>  <!-- Input data -->
                 {{ about }}
             </p>
         </div>
-
-        <div class="edu" id="education">
-            <!-- EDUCATION -->
+        <div class="edu">  <!-- EDUCATION -->
             <h2>Education</h2>
             <div class="arrange-horizontally">
                 <div class="edu-image">
@@ -128,8 +123,35 @@ Html
         </div>
     </section>
 
-    <div class="map-container section">
+    <!-- THIS IS THE NEW TWO SECTIONS -->
 
+    <section class="experiences-container">
+        <div class="experiences">
+            <h2>Where I've Worked</h2>
+            <p>
+                MLH Fellow
+            </p> 
+            <p>
+                Tech Lead
+            </p> 
+        </div>
+    </section>
+
+    <section class="projects-container">
+        <div class="projects">
+            <h2>{{ firstname }} Workshop</h2>
+            <section class="project-list">
+                <div class="first">
+                    {% block first %}{% endblock %}
+                </div>
+                <div class="second">
+                    {% block second %}{% endblock %}
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <div class="map-container section">
         <h1 class="map-label">Where I've Been</h1>
         <div id="map">
         </div>
