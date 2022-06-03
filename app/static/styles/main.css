@@ -155,6 +155,31 @@ body {
 Header/Nav Styling
 */
 
+.nav-logo {
+    transform: translateX(-70%);
+}
+
+.members {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.members a {
+    text-decoration: none;
+    color: white;
+    height: 100%;
+    display: flex;
+    padding: 0px 25px;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.5s ease;
+}
+
+.members a:hover {
+    background-color: rgba(102, 102, 102, 0.9);
+}
+
 .section {
     height: 100vh;
     scroll-snap-align: center;
@@ -168,8 +193,8 @@ html {
 }
 
 .nav-content {
+    position: relative;
     display: flex;
-    justify-content: space-between;
 }
 
 .burger-button {
@@ -281,7 +306,7 @@ h2 span {
 .profile-picture img {
     display: inline-block;
     margin: 0;
-    transform: scale(1.5, 1.5);
+    transform: scale(1.5, 1.5) translateX(-45px);
 }
 
 .profile-picture {
