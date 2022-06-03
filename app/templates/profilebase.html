@@ -1,3 +1,4 @@
+Html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,21 +17,42 @@
 
     <link lang='sass' rel="stylesheet" href="../static/styles/main.css">
     <link rel='icon' href='../static/img/favicon.ico' type='image/x-icon' />
-    <title>{{ title }}</title>
+    <title>{{ name }}</title>
 </head>
 
 <body>
     <header class="nav-bar">
         <div class="nav-content">
+            <div class="members">
+                <img src="../static/img/baboon.png">
+                <a href="/member/juan">Juan</a>
+                <a href="/member/noah">Noah</a>
+                <a href="/member/malik">Malik</a>
+            </div>
             <div class="nav-logo">
                 <a href="/">
                     <img src="../static/img/logo.svg" />
                 </a>
             </div>
+            <div class="menu">
+                <div class="burger-button">
+                    <div class="burger">
+
+                    </div>
+                </div>
+                <div class="slide-menu">
+                    <ul>
+                        <li><a href="#profile">Introduction</a></li>
+                        <li><a href="#education">About & Education</a></li>
+                        <li><a href="#projects">Experience</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </header>
 
-    <div class="profile">
+    <div class="profile section" id="profile">
         <div id="profile-picture" class="profile-picture">
             <div class="intro">
                 <h1><span style="--order: 1">Hi,</span></h1>
@@ -47,9 +69,6 @@
                 <h1><span style="--order: 5">MLH</span> <span style="--order: 6">Fellow</span></h1>
                 <br>
                 <div class="more">
-                    <div class="button">
-                        <p>Learn more!</p>
-                    </div>
                     <div class="socials">
                         <a href="{{ linkedin }}" target="_blank" class="linkedin">Linkedin</a>
                         <a href="{{ github }}" target="_blank" class="github">Github</a>
@@ -69,24 +88,28 @@
         </div>
         <div class="edu">  <!-- EDUCATION -->
             <h2>Education</h2>
-            <div class="arrange-horizontally"> 
-                <div class="edu-image">  
-                    <img src="../static/img/{{ seal }}-seal.jpg">  <!-- Input data -->
+            <div class="arrange-horizontally">
+                <div class="edu-image">
+                    <img src="../static/img/{{ seal }}-seal.jpg"> <!-- Input data -->
                 </div>
                 <div>
                     <p class="university-name">
-                        {{ university }}  <!-- Input data -->
+                        {{ university }}
+                        <!-- Input data -->
                     </p>
                     <p class="degree">
-                        {{ degree }}  <!-- Input data -->
+                        {{ degree }}
+                        <!-- Input data -->
                     </p>
                     <p class="year">
-                        {{ years }}  <!-- Input data -->
+                        {{ years }}
+                        <!-- Input data -->
                     </p>
                 </div>
             </div>
             <p class="activites">
-                {{ activities }}  <!-- Input data -->
+                {{ activities }}
+                <!-- Input data -->
             </p>
         </div>
     </section>
@@ -120,5 +143,16 @@
     </section>
 
 </body>
+<script>
+    let menuOpen = false;
+    const burgerButton = document.querySelector('.burger-button');
+    const menu = document.querySelector('.menu');
+
+    burgerButton.addEventListener('click', (e) => {
+        menu.classList.toggle('open');
+    })
+
+
+</script>
 
 </html>

@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap%27');
+
+html {
+    box-sizing: border-box;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+    /* Changed again - Noah */
+    font-family: 'Share Tech', sans-serif;
+}
+
+.home-text {
+    color: #ffffff;
+    text-align: center;
+}
+
+.home-profile {
+    display: flex;
+    height: 500px;
+    border: white 5px solid;
+    margin: 20px;
+    justify-content: space-between;
+}
+
+.home-item {
+    border-radius: 50%;
+    max-width: 100%;
+    max-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.profile-noah {
+    background: url(../img/noahprofile.jpg);
+    background-size: cover;
+}
+
+.profile-malik {
+    background: url(../img/malikprofile.jpg);
+    background-size: cover;
+}
+
+.profile-juan {
+    background: url(../img/juanprofile.jpg);
+    background-size: cover;
+}
+
+body {
+    background-color: #000000;
+    /* changed background */
+    background-size: cover;
+    width: auto;
+    overflow-x: hidden;
+    font-family: "Share Tech", serif;
+    margin: 0px;
+    text-align: center;
+}
+
+.nav-bar {
+    width: 100%;
+    display: block;
+    position: fixed;
+    top: 0;
+    background-color: #000000;
+    /* changed background */
+    font-family: "Roboto", serif;
+    font-weight: 700 !important;
+    border-bottom: 2px solid white;
+}
+
+.nav-content img {
+    height: 60px;
+}
+
+.nav-content .logo-touch-target {
+    display: inline-flex;
+    height: 60%;
+    width: 350px;
+}
+
+.nav-content .nav-logo {
+    height: 60px;
+    margin: auto;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-logo img {
+    width: 200px;
+}
+
+.nav-content nav {
+    display: block;
+    width: 100%;
+    text-align: right;
+    padding-top: 0px;
+    padding-right: 0px;
+}
+
+.home-profile {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.baboon {
+    max-height: 150px;
+    border-radius: 20px;
+    margin-top: 75px;
+}
+
+.person {
+    display: inline-block;
+    text-align: center;
+    color: white;
+}
+
+.person img {
+    height: 200px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+}
+
+.person .button {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    color: white;
+    background: none;
+    border: 2px solid white;
+    padding: 0 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.person .button a {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+    padding: 10px 5px;
+    text-decoration: none;
+    color: white;
+}
+
+.person .button:before {
+    z-index: 0;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: -100%;
+    top: 0;
+    background-color: rgb(0, 201, 201);
+    transition: all 1s ease;
+}
+
+.person .button:hover::before {
+    left: 0;
+}
+
+.person span {
+    transform: translateY(0);
+    opacity: 0;
+    display: inline-block;
+    animation: popUp 250ms ease forwards;
+    animation-delay: calc(var(--order) * 250ms);
+    transition: color 0.5s ease 0s;
+}
+
+.person span:hover {
+    color: cyan;
+}
