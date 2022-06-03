@@ -60,37 +60,68 @@
         </div>
     </div>
 
-    <section class="container">   <!-- START OF ABOUT/EDU -->
-        <div class="about">  <!-- ABOUT MYSELF -->
-            <h2>About</h2>
-            <p>  <!-- Input data -->
-                {{ about }}
-            </p>
-        </div>
-
-        <div class="edu">  <!-- EDUCATION -->
-            <h2>Education</h2>
-            <div class="arrange-horizontally"> 
-                <div class="edu-image">  
-                    <img src="../static/img/{{ seal }}-seal.jpg">  <!-- Input data -->
-                </div>
-                <div>
-                    <p class="university-name">
-                        {{ university }}  <!-- Input data -->
-                    </p>
-                    <p class="degree">
-                        {{ degree }}  <!-- Input data -->
-                    </p>
-                    <p class="year">
-                        {{ years }}  <!-- Input data -->
-                    </p>
-                </div>
+        <section class="about-edu-container">   <!-- START OF ABOUT/EDU -->
+            <div class="about">  <!-- ABOUT MYSELF -->
+                <h2>About</h2>
+                <p>  <!-- Input data -->
+                    {{ about }}
+                </p>
             </div>
-            <p class="activites">
-                {{ activities }}  <!-- Input data -->
-            </p>
-        </div>
-    </section>
+            <div class="edu">  <!-- EDUCATION -->
+                <h2>Education</h2>
+                <div class="arrange-horizontally"> 
+                    <div class="edu-image">  
+                        <img src="../static/img/{{ seal }}-seal.jpg">  <!-- Input data -->
+                    </div>
+                    <div>
+                        <p class="university-name">
+                            {{ university }}  <!-- Input data -->
+                        </p>
+                        <p class="degree">
+                            {{ degree }}  <!-- Input data -->
+                        </p>
+                        <p class="year">
+                            {{ years }}  <!-- Input data -->
+                        </p>
+                    </div>
+                </div>
+                <p class="activites">
+                    {{ activities }}  <!-- Input data -->
+                </p>
+            </div>
+        </section>
+
+        <!-- THIS IS THE NEW TWO SECTIONS -->
+
+        <section class="experiences-container">
+            <div class="experiences">
+                <h2>Experiences</h2>
+                <p>
+                    MLH Fellow
+                </p> 
+                <p>
+                    Tech Lead
+                </p> 
+            </div>
+        </section>
+
+        <section class="projects-container">
+            <div class="projects">
+                <h2>Projects</h2>
+                <section class="project-list">
+                    <div class="first">
+                        <p>
+                            Weather App
+                        </p>
+                    </div>
+                    <div class="second">
+                        <p>
+                            Simon Says App
+                        </p>
+                    </div>
+                </section>
+            </div>
+        </section>
 
 </body>
 
