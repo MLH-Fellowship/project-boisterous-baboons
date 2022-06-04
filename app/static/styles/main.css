@@ -6,16 +6,15 @@
 Scrolling
 */
 
-html {
-    scroll-behavior: smooth;
-}
-
 .snap-scroll-container {
+    width: 100%;
+    height: 100%;
     scroll-snap-type: y mandatory;
+    overflow-y: scroll;
 }
 
 section {
-    scroll-snap-align: center;
+    scroll-snap-align: start;
 }
 
 /* 
@@ -39,6 +38,8 @@ body {
     background-color: #000000;
     /* changed background */
     background-size: cover;
+    width: 100vw;
+    height: 100vh;
     overflow-x: hidden;
     font-family: "Share Tech", serif;
     margin: 0px;
@@ -407,8 +408,15 @@ Projects Section Styling
     background: none;
     border: 2px solid white;
     height: 70%;
-    width: 90%;
+    width: 70%;
     border-radius: 10px;
+    padding: 50px 0;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .projects-container h2 {
@@ -420,7 +428,7 @@ Projects Section Styling
 
 .first,
 .second {
-    height: 80%;
+    height: 425px;
     color: white;
     background: none;
     border: 2px solid white;

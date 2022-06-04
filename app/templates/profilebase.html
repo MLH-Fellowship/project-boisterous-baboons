@@ -28,7 +28,7 @@
 <body>
     <nav>
         <div class="members">
-            <img src="../static/img/baboon.png">
+            <a href="/">Home</a>  <!-- changed to home button instead of logo -->
             <a href="/member/juan">Juan</a>
             <a href="/member/noah">Noah</a>
             <a href="/member/malik">Malik</a>
@@ -128,15 +128,17 @@
         </section>
 
         <section class="projects-container" id="projects">
-            <h2>{{ firstname }} Workshop</h2>
-            <div class="projects">
-                <div class="first">
-                    {% block first %}
-                    {% endblock %}
-                </div>
-                <div class="second">
-                    {% block second %}
-                    {% endblock %}
+            <div>  <!-- Added div to fix projects for scroll feature - noah -->
+                <h2>{{ firstname }} Workshop</h2>
+                <div class="projects">
+                    <div class="first">
+                        {% block first %}
+                        {% endblock %}
+                    </div>
+                    <div class="second">
+                        {% block second %}
+                        {% endblock %}
+                    </div>
                 </div>
             </div>
         </section>

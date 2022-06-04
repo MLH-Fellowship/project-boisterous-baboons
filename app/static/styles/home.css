@@ -20,6 +20,10 @@ button {
     font-family: 'Share Tech', sans-serif;
 }
 
+body {  /* A test image, maybe keep, maybe scrap*/
+    background-image: url('/static/img/home-background.jpg');
+}
+
 .home-text {
     color: #ffffff;
     text-align: center;
@@ -27,10 +31,12 @@ button {
 
 .home-profile {
     display: flex;
+    justify-content: space-around;
+    align-items: center;
     height: 500px;
     border: white 5px solid;
     margin: 20px;
-    justify-content: space-between;
+    border-radius: 15px;
 }
 
 .home-item {
@@ -104,15 +110,10 @@ body {
     width: 200px;
 }
 
-.home-profile {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
 .baboon {
     max-height: 150px;
     transform: scale(1.3, 1.3);
+    margin-top: 20px;
 }
 
 .person {
