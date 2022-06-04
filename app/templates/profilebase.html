@@ -1,4 +1,3 @@
-Html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,75 +26,68 @@ Html
 </head>
 
 <body>
-    <header class="nav-bar">
-        <div class="nav-content">
-            <div class="members">
-                <img src="../static/img/baboon.png">
-                <a href="/member/juan">Juan</a>
-                <a href="/member/noah">Noah</a>
-                <a href="/member/malik">Malik</a>
-            </div>
-            <div class="nav-logo">
-                <a href="/">
-                    <img src="../static/img/logo.svg" />
-                </a>
-            </div>
-            <div class="menu">
-                <div class="burger-button">
-                    <div class="burger">
+    <nav>
+        <div class="members">
+            <img src="../static/img/baboon.png">
+            <a href="/member/juan">Juan</a>
+            <a href="/member/noah">Noah</a>
+            <a href="/member/malik">Malik</a>
+        </div>
+        <div class="menu">
+            <div class="burger-button">
+                <div class="burger">
 
-                    </div>
                 </div>
-                <div class="slide-menu">
-                    <ul>
-                        <li><a href="#profile">Introduction</a></li>
-                        <li><a href="#education">About & Education</a></li>
-                        <li><a href="#projects">Experience</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                    </ul>
-                </div>
+            </div>
+            <div class="slide-menu">
+                <ul>
+                    <li><a href="#profile">Introduction</a></li>
+                    <li><a href="#education">About & Education</a></li>
+                    <li><a href="#projects">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                </ul>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <div class="profile section" id="profile">
-        <div id="profile-picture" class="profile-picture">
-            <div class="intro">
-                <h1><span style="--order: 1">Hi,</span></h1>
-                <h1><span style="--order: 2">I'm</span>
-                    {% for word in name.split(' ') %}
-                    {% if loop.last %}
-                    <span style="--order: {{2 + loop.index}}">{{ word }},</span>
-                    {% endif %}
-                    {% if not loop.last %}
-                    <span style="--order: {{2 + loop.index}}">{{ word }}</span>
-                    {% endif%}
-                    {% endfor %}
-                </h1>
-                <h1><span style="--order: 5">MLH</span> <span style="--order: 6">Fellow</span></h1>
-                <br>
-                <div class="more">
-                    <div class="socials">
-                        <a href="{{ linkedin }}" target="_blank" class="linkedin">Linkedin</a>
-                        <a href="{{ github }}" target="_blank" class="github">Github</a>
-                    </div>
-                </div>
+    <section class="profile" id="profile">
+        <div class="intro">
+            <h1><span style="--order: 1">Hi,</span></h1>
+            <h1><span style="--order: 2">I'm</span>
+                {% for word in name.split(' ') %}
+                {% if loop.last %}
+                <span style="--order: {{2 + loop.index}}">{{ word }},</span>
+                {% endif %}
+                {% if not loop.last %}
+                <span style="--order: {{2 + loop.index}}">{{ word }}</span>
+                {% endif%}
+                {% endfor %}
+            </h1>
+            <h1><span style="--order: 5">MLH</span> <span style="--order: 6">Fellow</span></h1>
+            <br>
+            <div class="socials">
+                <a href="{{ linkedin }}" target="_blank" class="linkedin">Linkedin</a>
+                <a href="{{ github }}" target="_blank" class="github">Github</a>
             </div>
-            <img src="../static/img/{{ member }}profile.jpg">
         </div>
+        <img src="../static/img/{{ member }}profile.jpg">
         {% block waves%}
 
         {% endblock %}
-    </div>
+    </section>
 
-    <section class="about-edu-container">   <!-- START OF ABOUT/EDU -->
-        <div class="about">  <!-- ABOUT MYSELF -->
+    <section class="about-edu-container">
+        <!-- START OF ABOUT/EDU -->
+        <div class="about">
+            <!-- ABOUT MYSELF -->
             <h2>About Me</h2>
-            <p>  <!-- Input data -->
+            <p>
+                <!-- Input data -->
                 {{ about }}
             </p>
         </div>
-        <div class="edu">  <!-- EDUCATION -->
+        <div class="edu">
+            <!-- EDUCATION -->
             <h2>Education</h2>
             <div class="arrange-horizontally">
                 <div class="edu-image">
@@ -130,10 +122,10 @@ Html
             <h2>Where I've Worked</h2>
             <p>
                 MLH Fellow
-            </p> 
+            </p>
             <p>
                 Tech Lead
-            </p> 
+            </p>
         </div>
     </section>
 

@@ -76,7 +76,7 @@ body {
     width: 100%;
     z-index: 4;
     display: block;
-    position: fixed;
+    position: relative;
     top: 0;
     background-color: #000000;
     /* changed background */
@@ -85,17 +85,13 @@ body {
     border-bottom: 2px solid white;
 }
 
-.nav-content img {
-    height: 60px;
-}
-
-.nav-content .logo-touch-target {
+.nav-bar .logo-touch-target {
     display: inline-flex;
     height: 60%;
     width: 350px;
 }
 
-.nav-content .nav-logo {
+.nav-bar .nav-logo {
     height: 60px;
     margin: auto;
 }
@@ -108,14 +104,6 @@ body {
 
 .nav-logo img {
     width: 200px;
-}
-
-.nav-content nav {
-    display: block;
-    width: 100%;
-    text-align: right;
-    padding-top: 0px;
-    padding-right: 0px;
 }
 
 .home-profile {
@@ -189,10 +177,4 @@ body {
 
 .person span:hover {
     color: cyan;
-}
-
-.section {
-    box-sizing: border-box;
-    height: calc(100vh - 60px);
-    margin-top: 90px;
 }

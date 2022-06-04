@@ -1,14 +1,28 @@
+/* Imported font*/
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap%27');
+
+/*
+
+Scrolling
+*/
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    /* NOTE: scroll-snap-type causes a bug that allows scrolling up outside of the page. Will be needed later so left for now and will be resolved later.*/
+    /* scroll-snap-type: y mandatory; */
+}
+
+/* .section {
+    height: 100vh;
+    scroll-snap-align: center;
+    box-sizing: border-box;
+} */
+
 /* 
 //////////////////////////////////////////////////////////////////////////////
 Default Styles
 */
-
-/* Imported font*/
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap%27');
-
-html {
-    box-sizing: border-box;
-}
 
 p,
 h1,
@@ -22,60 +36,26 @@ button {
     font-family: 'Share Tech', sans-serif;
 }
 
-.home-text {
-    color: #ffffff;
-    text-align: center;
-    font-size: 50px;  /* Increased home page header font - noah */
-}
-
-.home-profile {
-    display: flex;
-    height: 500px;
-    border: white 5px solid;
-    margin: 20px;
-    justify-content: space-between;
-}
-
-.home-item {
-    border-radius: 50%;
-    max-width: 100%;
-    max-height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    padding: 20px;
-    flex-grow: 1;
-}
-
-.profile-noah {
-    background: url(../img/noahprofile.jpg);
-    background-size: cover;
-}
-
-.profile-malik {
-    background: url(../img/malikprofile.jpg);
-    background-size: cover;
-}
-
-.profile-juan {
-    background: url(../img/juanprofile.jpg);
-    background-size: cover;
-}
-
 body {
     background-color: #000000;
     /* changed background */
     background-size: cover;
-    width: auto;
     overflow-x: hidden;
     font-family: "Share Tech", serif;
     margin: 0px;
 }
 
-.nav-bar {
+/*
+//////////////////////////////////////////////////////////////////////////////
+Header/Nav Styling
+*/
+
+nav {
     width: 100%;
-    display: block;
+    display: flex;
+    justify-content: space-between;
     position: fixed;
+    z-index: 5;
     top: 0;
     background-color: #000000;
     /* changed background */
@@ -84,78 +64,16 @@ body {
     border-bottom: 2px solid white;
 }
 
-.nav-content img {
+nav img {
     height: 60px;
-}
-
-.nav-content .logo-touch-target {
-    display: inline-flex;
-    height: 60%;
-    width: 350px;
-}
-
-.nav-content .nav-logo {
-    height: 60px;
-    margin: auto;
-}
-
-.nav-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .nav-logo img {
     width: 200px;
 }
 
-.nav-content nav {
-    display: block;
-    width: 100%;
-    text-align: right;
-    padding-top: 0px;
-    padding-right: 0px;
-}
-
-.profile {
-    position: relative;
-    background-color: #000000 !important;
-    text-align: center;
-    height: 320px;
-    margin-bottom: 50px;
-}
-
-.profile h1 {
-    font-size: 60px; 
-    font-weight: 700;
-    color: white;
-}
-
-.profile img {  /* positioning more to the left */
-    border-radius: 50%;
-    max-width: 100%;
-    max-height: 100%;
-    /*margin-left: auto;
-    margin-right: 400px;*/
-    /* changed right margin */
-    display: block;
-    padding: 20px;
-    transform: translateX(-80px);
-}
-
-.profile .profile-picture {
-    position: relative;
-    top: 0;
-    margin-bottom: 30px;
-    height: 200px;
-}
-
-/*
-//////////////////////////////////////////////////////////////////////////////
-Header/Nav Styling
-*/
-
 .nav-logo {
+    display: inline-block;
     transform: translateX(-70%);
 }
 
@@ -180,21 +98,8 @@ Header/Nav Styling
     background-color: rgba(102, 102, 102, 0.9);
 }
 
-.section {
-    height: 100vh;
-    scroll-snap-align: center;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-    /* NOTE: scroll-snap-type causes a bug that allows scrolling up outside of the page. Will be needed later so left for now and will be resolved later.*/
-    scroll-snap-type: y mandatory;
-}
-
-.nav-content {
-    position: relative;
-    display: flex;
+.slide-menu ul {
+    margin: 0;
 }
 
 .burger-button {
@@ -209,10 +114,6 @@ html {
     border-bottom: none;
     border-right: none;
     transition: all 0.5s ease;
-}
-
-.nav-bar {
-    z-index: 100;
 }
 
 .burger {
@@ -295,35 +196,40 @@ html {
 Intro Section Styling
 */
 
-h2 span {
-    color: white;
+section {
+    height: 100vh;
 }
 
-.profile {
-    padding-top: 200px;
-}
 
-.profile-picture img {
-    display: inline-block;
-    margin: 0;
-    transform: scale(1.5, 1.5) translateX(-45px);
-}
-
-.profile-picture {
+#profile {
+    position: relative;
+    background-color: #000000 !important;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    /* Increased from 30 to 150*/
+}
+
+#profile h1 {
+    font-size: 60px;
+    font-weight: 700;
+    color: white;
+}
+
+#profile img {
+    border-radius: 50%;
+    max-width: 30%;
+    max-height: 300px;
+    transform: translateX(-80px);
+}
+
+#wave {
+    position: absolute;
+    bottom: 0;
 }
 
 .intro h1 {
-    text-align: left;
+    margin: 0;
     overflow: hidden;
-    margin-bottom: 0.25rem;
-}
-
-.intro {
-    text-align: left;
 }
 
 .intro span {
@@ -339,20 +245,16 @@ h2 span {
     color: cyan;
 }
 
-.more {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .socials {
+    position: relative;
     display: flex;
     z-index: 2;
     background-color: rgba(100, 100, 100, 0.9);
+    width: fit-content;
 }
 
 .socials img {
-    max-width: 50px;
+    max-width: 50%;
     max-height: 100%;
 }
 
@@ -389,26 +291,14 @@ a.github {
     }
 }
 
-@media screen and (max-width: 682px) {
-    .intro span {
-        font-size: 2rem;
-    }
-
-    .intro {
-        line-height: 2rem;
-    }
-}
-
 /* 
 //////////////////////////////////////////////////////////////////////////////
 About/Edu Section Styling
 */
 
 .about-edu-container {
-    display: flex;  /* hortizontally stacks children */
-    justify-content: center;  /* centers boxes */
-    flex-wrap: wrap;  /* moves elements under each other if they don't fit */
-    margin-bottom: 70px;
+    display: flex;
+    justify-content: center;
 }
 
 .about,
@@ -465,7 +355,7 @@ About/Edu Section Styling
 .year {
     font-size: 14px;
     margin-left: 30px;
-    font-weight:lighter;
+    font-weight: lighter;
 }
 
 .activites {
@@ -474,7 +364,9 @@ About/Edu Section Styling
     margin-right: 30px;
 }
 
-.about:hover, .edu:hover, .experiences:hover {
+.about:hover,
+.edu:hover,
+.experiences:hover {
     transform: scale(1.05);
     transition: all 1s ease;
 }
@@ -528,13 +420,17 @@ Projects Section Styling
 }
 
 .project-list {
-    display: flex;  /* hortizontally stacks children */
-    justify-content: center;  /* centers boxes */
-    flex-wrap: wrap;  /* moves elements under each other if they don't fit */
+    display: flex;
+    /* hortizontally stacks children */
+    justify-content: center;
+    /* centers boxes */
+    flex-wrap: wrap;
+    /* moves elements under each other if they don't fit */
     margin-bottom: 70px;
 }
 
-.first, .second {
+.first,
+.second {
     color: white;
     background: none;
     border: 2px solid white;
@@ -562,11 +458,13 @@ Projects Section Styling
 }
 
 .weather-image {
-    background-image: url('/static/img/project-images/weather-app.jpg');  /* Can't use .. because starting path search from css file */
+    background-image: url('/static/img/project-images/weather-app.jpg');
+    /* Can't use .. because starting path search from css file */
 }
 
 .simonsays-image {
-    background-image: url('/static/img/project-images/simon-says.jpg');  /* Can't use .. because starting path search from css file */
+    background-image: url('/static/img/project-images/simon-says.jpg');
+    /* Can't use .. because starting path search from css file */
 }
 
 .project-link {
@@ -580,7 +478,8 @@ Projects Section Styling
     cursor: pointer;
 }
 
-.first:hover, .second:hover {
+.first:hover,
+.second:hover {
     transform: scale(1.4);
     transition: all 1s ease;
 }
@@ -611,9 +510,4 @@ Projects Section Styling
     margin: 0;
     padding: 10px 0;
     text-align: center;
-}
-
-.section {
-    height: calc(100vh - 60px);
-    margin-top: 60px;
 }
