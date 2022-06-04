@@ -1,0 +1,29 @@
+/* New CSS file to hold stylings and animations for skills section*/
+
+.skills-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 550px;
+}
+
+.skills {
+    color: white;
+    background: none;
+    border: 2px solid white;
+    width: 70%;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.skills h2 {
+    font-size: 50px;
+    text-align: center;
+}
+
+.skills p {
+    font-size: 20px;
+    margin-left: 30px;
+    margin-right: 30px
+}
+
