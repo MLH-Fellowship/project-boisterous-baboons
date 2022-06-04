@@ -5,9 +5,7 @@ html {
 }
 
 :root {
-    --juan: violet;
-    --malik: orange;
-    --noah: rgb(57, 175, 214);
+    --button-color: transparent;
 }
 
 p,
@@ -158,23 +156,10 @@ body {
     height: 100%;
     left: -100%;
     top: 0;
-    background-color: rgb(0, 201, 201);
+    background-color: var(--button-color);
     transition: all 1s ease;
 }
 
 .person .button:hover::before {
     left: 0;
-}
-
-.person span {
-    transform: translateY(0);
-    opacity: 0;
-    display: inline-block;
-    animation: popUp 250ms ease forwards;
-    animation-delay: calc(var(--order) * 250ms);
-    transition: color 0.5s ease 0s;
-}
-
-.person span:hover {
-    color: cyan;
 }

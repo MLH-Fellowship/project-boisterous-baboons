@@ -49,104 +49,102 @@
             </div>
         </div>
     </nav>
-
-    <section class="profile" id="profile">
-        <div class="intro">
-            <h1><span style="--order: 1">Hi,</span></h1>
-            <h1><span style="--order: 2">I'm</span>
-                {% for word in name.split(' ') %}
-                {% if loop.last %}
-                <span style="--order: {{2 + loop.index}}">{{ word }},</span>
-                {% endif %}
-                {% if not loop.last %}
-                <span style="--order: {{2 + loop.index}}">{{ word }}</span>
-                {% endif%}
-                {% endfor %}
-            </h1>
-            <h1><span style="--order: 5">MLH</span> <span style="--order: 6">Fellow</span></h1>
-            <br>
-            <div class="socials">
-                <a href="{{ linkedin }}" target="_blank" class="linkedin">Linkedin</a>
-                <a href="{{ github }}" target="_blank" class="github">Github</a>
-            </div>
-        </div>
-        <img src="../static/img/{{ member }}profile.jpg">
-        {% block waves%}
-
-        {% endblock %}
-    </section>
-
-    <section class="about-edu-container">
-        <!-- START OF ABOUT/EDU -->
-        <div class="about">
-            <!-- ABOUT MYSELF -->
-            <h2>About Me</h2>
-            <p>
-                <!-- Input data -->
-                {{ about }}
-            </p>
-        </div>
-        <div class="edu">
-            <!-- EDUCATION -->
-            <h2>Education</h2>
-            <div class="arrange-horizontally">
-                <div class="edu-image">
-                    <img src="../static/img/{{ seal }}-seal.jpg"> <!-- Input data -->
-                </div>
-                <div>
-                    <p class="university-name">
-                        {{ university }}
-                        <!-- Input data -->
-                    </p>
-                    <p class="degree">
-                        {{ degree }}
-                        <!-- Input data -->
-                    </p>
-                    <p class="year">
-                        {{ years }}
-                        <!-- Input data -->
-                    </p>
+    <div class="snap-scroll-container">
+        <section class="profile" id="profile">
+            <div class="intro">
+                <h1><span style="--order: 1">Hi,</span></h1>
+                <h1><span style="--order: 2">I'm</span>
+                    {% for word in name.split(' ') %}
+                    {% if loop.last %}
+                    <span style="--order: {{2 + loop.index}}">{{ word }},</span>
+                    {% endif %}
+                    {% if not loop.last %}
+                    <span style="--order: {{2 + loop.index}}">{{ word }}</span>
+                    {% endif%}
+                    {% endfor %}
+                </h1>
+                <h1><span style="--order: 5">MLH</span> <span style="--order: 6">Fellow</span></h1>
+                <br>
+                <div class="socials">
+                    <a href="{{ linkedin }}" target="_blank" class="linkedin">Linkedin</a>
+                    <a href="{{ github }}" target="_blank" class="github">Github</a>
                 </div>
             </div>
-            <p class="activites">
-                {{ activities }}
-                <!-- Input data -->
-            </p>
-        </div>
-    </section>
+            <img src="../static/img/{{ member }}profile.jpg">
+            {% block waves%}
 
-    <!-- THIS IS THE NEW TWO SECTIONS -->
+            {% endblock %}
+        </section>
 
-    <section class="experiences-container">
-        <div class="experiences">
-            <h2>Where I've Worked</h2>
-            <p>
-                MLH Fellow
-            </p>
-            <p>
-                Tech Lead
-            </p>
-        </div>
-    </section>
+        <section class="about-edu-container" id="about-edu">
+            <!-- START OF ABOUT/EDU -->
+            <div class="about">
+                <!-- ABOUT MYSELF -->
+                <h2>About Me</h2>
+                <p>
+                    <!-- Input data -->
+                    {{ about }}
+                </p>
+            </div>
+            <div class="edu">
+                <!-- EDUCATION -->
+                <h2>Education</h2>
+                <div class="arrange-horizontally">
+                    <div class="edu-image">
+                        <img src="../static/img/{{ seal }}-seal.jpg"> <!-- Input data -->
+                    </div>
+                    <div class="university-info">
+                        <p class="university-name">
+                            {{ university }}
+                            <!-- Input data -->
+                        </p>
+                        <p class="degree">
+                            {{ degree }}
+                            <!-- Input data -->
+                        </p>
+                        <p class="year">
+                            {{ years }}
+                            <!-- Input data -->
+                        </p>
+                    </div>
+                </div>
+                <p class="activites">
+                    {{ activities }}
+                    <!-- Input data -->
+                </p>
+            </div>
+        </section>
 
-    <section class="projects-container">
-        <div class="projects">
+        <section class="experiences-container" id="experiences">
+            <div class="experiences">
+                <h2>Where I've Worked</h2>
+                <p>
+                    MLH Fellow
+                </p>
+                <p>
+                    Tech Lead
+                </p>
+            </div>
+        </section>
+
+        <section class="projects-container" id="projects">
             <h2>{{ firstname }} Workshop</h2>
-            <section class="project-list">
+            <div class="projects">
                 <div class="first">
-                    {% block first %}{% endblock %}
+                    {% block first %}
+                    {% endblock %}
                 </div>
                 <div class="second">
-                    {% block second %}{% endblock %}
+                    {% block second %}
+                    {% endblock %}
                 </div>
-            </section>
-        </div>
-    </section>
+            </div>
+        </section>
 
-    <div class="map-container section">
-        <h1 class="map-label">Where I've Been</h1>
-        <div id="map">
-        </div>
+        <section class="map" id="places-map">
+            <h1 class="map-label">Where I've Been</h1>
+            <div id="map"></div>
+        </section>
     </div>
 
 </body>

@@ -7,17 +7,16 @@ Scrolling
 */
 
 html {
-    box-sizing: border-box;
     scroll-behavior: smooth;
-    /* NOTE: scroll-snap-type causes a bug that allows scrolling up outside of the page. Will be needed later so left for now and will be resolved later.*/
-    /* scroll-snap-type: y mandatory; */
 }
 
-/* .section {
-    height: 100vh;
+.snap-scroll-container {
+    scroll-snap-type: y mandatory;
+}
+
+section {
     scroll-snap-align: center;
-    box-sizing: border-box;
-} */
+}
 
 /* 
 //////////////////////////////////////////////////////////////////////////////
@@ -187,10 +186,6 @@ nav img {
     right: 0;
 }
 
-
-
-
-
 /* 
 //////////////////////////////////////////////////////////////////////////////
 Intro Section Styling
@@ -298,7 +293,8 @@ About/Edu Section Styling
 
 .about-edu-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .about,
@@ -306,12 +302,13 @@ About/Edu Section Styling
     color: white;
     background: none;
     border: 2px solid white;
-    width: 400px;
-    margin: 125px;
+    width: 30%;
+    height: 70%;
     border-radius: 10px;
+    text-align: center;
 }
 
-.about h2 {
+.about-edu-container h2 {
     font-size: 50px;
     text-align: center;
 }
@@ -322,17 +319,10 @@ About/Edu Section Styling
     margin-right: 30px
 }
 
-.edu h2 {
-    font-size: 50px;
-    text-align: center;
-}
-
 .edu img {
     border-radius: 50%;
     max-width: 100px;
     max-height: 100px;
-    margin-left: 30px;
-    margin-bottom: 0;
 }
 
 .arrange-horizontally>* {
@@ -340,28 +330,27 @@ About/Edu Section Styling
     text-align: center;
 }
 
+.university-info {
+    text-align: center;
+}
+
 .university-name {
     font-size: 20px;
-    margin-left: 30px;
     font-weight: bold;
 }
 
 .degree,
 .year {
     font-size: 16px;
-    margin-left: 30px;
 }
 
 .year {
     font-size: 14px;
-    margin-left: 30px;
     font-weight: lighter;
 }
 
 .activites {
     font-size: 20px;
-    margin-left: 30px;
-    margin-right: 30px;
 }
 
 .about:hover,
@@ -376,14 +365,19 @@ About/Edu Section Styling
 Experiences Section Styling
 */
 
+.experiences-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .experiences {
     color: white;
     background: none;
     border: 2px solid white;
-    width: 1060px;
+    width: 70%;
     margin: auto;
     border-radius: 10px;
-    margin-bottom: 150px;
 }
 
 .experiences h2 {
@@ -402,41 +396,37 @@ Experiences Section Styling
 Projects Section Styling
 */
 
+
 .projects {
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     color: white;
     background: none;
     border: 2px solid white;
-    height: 750px;
-    width: 1060px;
-    margin: auto;
+    height: 70%;
+    width: 90%;
     border-radius: 10px;
-    margin-bottom: 100px;
 }
 
-.projects h2 {
+.projects-container h2 {
+    color: white;
     font-size: 50px;
     text-align: center;
-    margin-bottom: 0;
-}
-
-.project-list {
-    display: flex;
-    /* hortizontally stacks children */
-    justify-content: center;
-    /* centers boxes */
-    flex-wrap: wrap;
-    /* moves elements under each other if they don't fit */
-    margin-bottom: 70px;
+    margin: 0;
 }
 
 .first,
 .second {
+    height: 80%;
     color: white;
     background: none;
     border: 2px solid white;
-    width: 300px;
-    margin: 100px;
+    width: 30%;
     border-radius: 10px;
+    text-align: center;
 }
 
 .projects h3 {
@@ -446,25 +436,13 @@ Projects Section Styling
 
 .projects p {
     font-size: 18px;
-    margin-left: 10px;
-    margin-right: 10px;
+    text-align: center;
 }
 
 .project-image {
-    height: 180px;
-    margin-bottom: 20px;
-    background-size: cover;
+    height: 40%;
+    width: 100%;
     border-radius: 10px 10px 0 0;
-}
-
-.weather-image {
-    background-image: url('/static/img/project-images/weather-app.jpg');
-    /* Can't use .. because starting path search from css file */
-}
-
-.simonsays-image {
-    background-image: url('/static/img/project-images/simon-says.jpg');
-    /* Can't use .. because starting path search from css file */
 }
 
 .project-link {
@@ -473,40 +451,37 @@ Projects Section Styling
     padding: 10px 20px;
     display: block;
     text-align: center;
-    margin: 20px 50px;
+    width: 40%;
+    margin: 0 auto;
     border-radius: 10px;
     cursor: pointer;
 }
 
 .first:hover,
 .second:hover {
-    transform: scale(1.4);
+    transform: scale(1.1);
     transition: all 1s ease;
 }
 
 /* Map Styling */
-#map {
+.map {
     position: relative;
-    top: 0;
-    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#map {
+    height: 70%;
     width: 80%;
-    margin: auto;
+    margin: 0 auto;
     z-index: 1;
 }
 
-.map-container {
-    position: relative;
-}
-
 .map-label {
-    position: relative;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 3;
     background-color: rgb(0, 0, 0);
     color: white;
-    width: 80%;
     margin: 0;
     padding: 10px 0;
     text-align: center;
