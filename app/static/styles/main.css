@@ -364,7 +364,8 @@ About/Edu Section Styling
 
 .about:hover,
 .edu:hover,
-.experiences:hover {
+.experiences:hover,
+.skills:hover {
     transform: scale(1.05);
     transition: all 1s ease;
 }

@@ -110,16 +110,6 @@
             </div>
         </section>
 
-        <!-- Adding new section container for skills; copeied experiences for testing -->
-        <section class="skills-container" id="skills">
-            <div class="skills">
-                <h2>My Personal Tech Stack</h2>
-                {% block skills %} <!-- pass SVG of skills through respective pages -->
-
-                {% endblock %}
-            </div>
-        </section>
-
         <section class="projects-container" id="projects">
             <div>  <!-- Added div to fix projects for scroll feature - noah -->
                 <h2>{{ firstname }} Workshop</h2>
@@ -133,6 +123,15 @@
                         {% endblock %}
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Adding new section container for skills; copeied experiences for testing -->
+        <section class="skills-container" id="skills">
+            <div class="skills">
+                <h2>My Personal Tech Stack</h2>
+                {% block skills %} <!-- pass SVG of skills through respective pages -->
+                {% endblock %}
             </div>
         </section>
 

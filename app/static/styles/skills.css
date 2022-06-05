@@ -4,13 +4,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 550px;
 }
 
 .skills {
     color: white;
     background: none;
     border: 2px solid white;
+    height: 60%;
     width: 70%;
     margin: auto;
     border-radius: 10px;
@@ -20,10 +20,3 @@
     font-size: 50px;
     text-align: center;
 }
-
-.skills p {
-    font-size: 20px;
-    margin-left: 30px;
-    margin-right: 30px
-}
-
