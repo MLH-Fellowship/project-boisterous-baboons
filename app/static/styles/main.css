@@ -15,6 +15,7 @@ Scrolling
 
 section {
     scroll-snap-align: start;
+    overflow-x: hidden;
 }
 
 /* 
@@ -237,15 +238,18 @@ section {
     transition: color 0.5s ease 0s;
 }
 
-.intro, #noah span:hover {
+.intro,
+#noah span:hover {
     color: cyan;
 }
 
-.intro, #juan span:hover {
+.intro,
+#juan span:hover {
     color: rgb(194, 70, 231);
 }
 
-.intro, #malik span:hover {
+.intro,
+#malik span:hover {
     color: rgb(252, 158, 34);
 }
 
