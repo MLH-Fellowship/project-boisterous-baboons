@@ -1,5 +1,27 @@
 {% extends 'profilebase.html' %}
 
+{% block intro %}
+<div class="intro" id="noah">
+    <h1><span style="--order: 1">Hi,</span></h1>
+    <h1><span style="--order: 2">I'm</span>
+        {% for word in name.split(' ') %}
+        {% if loop.last %}
+        <span style="--order: {{2 + loop.index}}">{{ word }},</span>
+        {% endif %}
+        {% if not loop.last %}
+        <span style="--order: {{2 + loop.index}}">{{ word }}</span>
+        {% endif%}
+        {% endfor %}
+    </h1>
+    <h1><span style="--order: 5">MLH</span> <span style="--order: 6">Fellow</span></h1>
+    <br>
+    <div class="socials">
+        <a href="{{ linkedin }}" target="_blank" class="linkedin">Linkedin</a>
+        <a href="{{ github }}" target="_blank" class="github">Github</a>
+    </div>
+</div>
+{% endblock %}
+
 {% block waves%}
 <svg id="wave" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 250" version="1.1"
     xmlns="http://www.w3.org/2000/svg">

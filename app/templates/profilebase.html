@@ -52,25 +52,7 @@
     </nav>
     <div class="snap-scroll-container">
         <section class="profile" id="profile">
-            <div class="intro">
-                <h1><span style="--order: 1">Hi,</span></h1>
-                <h1><span style="--order: 2">I'm</span>
-                    {% for word in name.split(' ') %}
-                    {% if loop.last %}
-                    <span style="--order: {{2 + loop.index}}">{{ word }},</span>
-                    {% endif %}
-                    {% if not loop.last %}
-                    <span style="--order: {{2 + loop.index}}">{{ word }}</span>
-                    {% endif%}
-                    {% endfor %}
-                </h1>
-                <h1><span style="--order: 5">MLH</span> <span style="--order: 6">Fellow</span></h1>
-                <br>
-                <div class="socials">
-                    <a href="{{ linkedin }}" target="_blank" class="linkedin">Linkedin</a>
-                    <a href="{{ github }}" target="_blank" class="github">Github</a>
-                </div>
-            </div>
+            {% block intro %}{% endblock %}
             <img src="../static/img/{{ member }}profile.jpg">
             {% block waves%}
 
@@ -128,16 +110,6 @@
             </div>
         </section>
 
-        <!-- Adding new section container for skills; copeied experiences for testing -->
-        <section class="skills-container" id="skills">
-            <div class="skills">
-                <h2>My Personal Tech Stack</h2>
-                {% block skills %} <!-- pass SVG of skills through respective pages -->
-
-                {% endblock %}
-            </div>
-        </section>
-
         <section class="projects-container" id="projects">
             <div>  <!-- Added div to fix projects for scroll feature - noah -->
                 <h2>{{ firstname }} Workshop</h2>
@@ -151,6 +123,15 @@
                         {% endblock %}
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Adding new section container for skills; copeied experiences for testing -->
+        <section class="skills-container" id="skills">
+            <div class="skills">
+                <h2>My Personal Tech Stack</h2>
+                {% block skills %} <!-- pass SVG of skills through respective pages -->
+                {% endblock %}
             </div>
         </section>
 

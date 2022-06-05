@@ -237,8 +237,16 @@ section {
     transition: color 0.5s ease 0s;
 }
 
-.intro span:hover {
+.intro, #noah span:hover {
     color: cyan;
+}
+
+.intro, #juan span:hover {
+    color: rgb(194, 70, 231);
+}
+
+.intro, #malik span:hover {
+    color: rgb(252, 158, 34);
 }
 
 .socials {
@@ -356,7 +364,8 @@ About/Edu Section Styling
 
 .about:hover,
 .edu:hover,
-.experiences:hover {
+.experiences:hover,
+.skills:hover {
     transform: scale(1.05);
     transition: all 1s ease;
 }
