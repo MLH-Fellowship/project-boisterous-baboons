@@ -82,8 +82,7 @@ body {
     display: block;
     position: relative;
     top: 0;
-    background-color: #000000;
-    /* changed background */
+    background-color: clear; /* changed background from black until home design resolved */
     font-family: "Roboto", serif;
     font-weight: 700 !important;
     border-bottom: 2px solid white;
