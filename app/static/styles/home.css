@@ -72,14 +72,16 @@ body {
     font-family: "Share Tech", serif;
     margin: 0px;
     text-align: center;
+    height: 100vh;
+    overflow-y: hidden;
 }
 
-#particles-js { 
+#particles-js {
     width: 100%;
     height: 100%;
-    position: absolute; 
+    position: absolute;
     top: 0;
-    z-index: -1; 
+    z-index: -1;
 }
 
 .nav-bar {
@@ -88,7 +90,8 @@ body {
     display: block;
     position: relative;
     top: 0;
-    background-color: clear; /* changed background from black until home design resolved */
+    background-color: clear;
+    /* changed background from black until home design resolved */
     font-family: "Roboto", serif;
     font-weight: 700 !important;
     border-bottom: 2px solid white;
