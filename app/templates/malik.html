@@ -194,27 +194,52 @@
 
 
 {% block first %}
-<div class="project-image weather-image"></div>
+<img src="../static/img/project-images/bowling.jpg" alt="weather app image" class="project-image">
 <h3>
-    Weather App
+    Sched-U-Bowl
 </h3>
 <p>
-    Application showing global weather data from different major cities. Designed the interface with SwiftUI.
+    Built a bowling alley reservation system designed to take the stress out of planning a bowling session, using the Calendly API and MongoDB.
 </p>
-<a href="https://github.com/noahromo/Weather" class="project-link">
+<a href="https://github.com/malbaker/bowling-demo" class="project-link">
     See Code
 </a>
 {% endblock %}
 
 {% block second %}
-<div class="project-image simonsays-image"></div>
+<img src="../static/img/project-images/dotfiles.jpg" alt="weather app image" class="project-image">
 <h3>
-    Simon Says
+    Dotfiles
 </h3>
 <p>
-    Developed a fun web-based game that resembles the classic Simon Says game using HTML, CSS, and JavaScript.
+    Dotfiles contains shell scripts for frequently used terminal operations, and custom configurations for applications within Linux.
 </p>
-<a href="https://github.com/noahromo/LightAndSoundMemoryGame" class="project-link">
+<a href="https://github.com/malbaker/dotfiles" class="project-link">
     See Code
 </a>
+{% endblock %}
+
+{% block experiences %}
+<p class="tag">
+    Production Engineering Fellow
+</p>
+<p class="org">
+    MLH Fellowship Powered by Meta
+</p>
+<ul>
+    <li>Worked with mentors from Meta to gain the skills needed to keep products like Facebook, WhatsApp, Instagram, and Oculus running</li>
+    <li>Learned the tools and concepts necessary to efficiently build/manage a production Linux infrastructure</li>
+    <li>Built this portfolio as part of the week 1 MLH Fellowship Hackathon</li>
+</ul>
+<p class="tag">
+    IT Support Specialist
+</p>
+<p class="org">
+    Boston University
+</p>
+<ul>
+    <li>Provide technical service and solutions as part of a network of 400+ employees, providing service to over 10,000+ faculty on the Boston University Charles River Campus and Medical Campus</li>
+    <li>Use ServiceNow to processtickets, communicate with clients and coworkers, and daily task management</li>
+    <li>Perform troubleshooting methods such as hardware testing and system diagnostics</li>
+</ul>
 {% endblock %}
