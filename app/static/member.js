@@ -24,13 +24,27 @@ slideMenu.addEventListener('click', (e) => {
 ////////////////////////////////////////////////////////////
 // Reveal Elements on Scroll
 const sections = document.querySelectorAll('section:not(:first-child)');
-console.log(sections);
+let cards = [];
 
-const revealSection = function () {
+sections.forEach((section) => {
+    section.querySelectorAll('div').forEach((card) => card.classList.add('hide-card'))
+})
 
+const revealSection = function (entries) {
+    entries.forEach((entry) => {
+        console.log(entry);
+        if (entry.isIntersecting) {
+            entry.target.querySelectorAll('div').forEach((card) => card.classList.remove('hide-card'))
+        } else {
+            entry.target.querySelectorAll('div').forEach((card) => card.classList.add('hide-card'))
+        }
+    })
 }
 
-const sectionObserver = new IntersectionObserver(revealSection, {});
+const sectionObserver = new IntersectionObserver(revealSection, {
+    root: null,
+    threshold: 0.3
+});
 
 sections.forEach((section) => {
     sectionObserver.observe(section);
