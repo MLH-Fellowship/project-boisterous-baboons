@@ -393,16 +393,17 @@ About/Edu Section Styling
     text-align: center;
 }
 
-.about p {
+.about p, .activites {
     font-size: 20px;
     margin-left: 30px;
-    margin-right: 30px
+    margin-right: 30px;
 }
 
 .edu img {
     border-radius: 50%;
     max-width: 100px;
     max-height: 100px;
+    margin-right: 30px;
 }
 
 .arrange-horizontally>* {
@@ -427,10 +428,6 @@ About/Edu Section Styling
 .year {
     font-size: 14px;
     font-weight: lighter;
-}
-
-.activites {
-    font-size: 20px;
 }
 
 .about:hover,
@@ -466,10 +463,29 @@ Experiences Section Styling
     text-align: center;
 }
 
-.experiences p {
-    font-size: 20px;
+.tag {
+    font-size: 30px;
     margin-left: 30px;
-    margin-right: 30px
+    margin-right: 30px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.org {
+    font-size: 25px;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-style: italic;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+ul {
+    margin-left: 40px;
+    margin-right: 40px;
+    list-style-type: circle;
+    font-size: 20px;
+    margin-top: 10px;
 }
 
 /* 
@@ -525,6 +541,8 @@ Projects Section Styling
 .projects p {
     font-size: 18px;
     text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .project-image {
