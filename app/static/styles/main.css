@@ -18,6 +18,22 @@ section {
     overflow-x: hidden;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1be;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(96, 96, 96);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(64, 64, 64);
+}
+
 /* 
 //////////////////////////////////////////////////////////////////////////////
 Default Styles
@@ -147,7 +163,7 @@ nav img {
 }
 
 .menu.open .burger::before {
-    background-color: black;
+    background-color: rgb(226, 226, 226);
     transform: rotateZ(45deg);
 }
 
@@ -156,36 +172,78 @@ nav img {
 }
 
 .menu.open .burger::after {
-    background-color: black;
+    background-color: rgb(226, 226, 226);
     transform: rotateZ(-45deg);
+}
+
+.menu.open .burger-button {
+    z-index: 5;
+    border-radius: 50%;
+    background-color: rgba(173, 173, 173, 0.9);
 }
 
 .slide-menu {
     position: absolute;
-    padding-top: 50px;
-    padding-right: 30px;
-    padding-bottom: 10px;
-    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
     top: 0;
-    right: -220px;
-    color: black;
-    background-color: #fff;
+    right: -20%;
+    color: white;
+    background-color: #1f1f31;
     transition: right 0.5s ease;
+    height: 100vh;
+}
+
+.slide-menu .profile-pic {
+    padding: 25% 10% 10% 10%;
+    text-align: center;
+    border-top: 25% solid #292930;
+}
+
+.slide-menu .profile-pic img {
+    height: 20%;
+    width: 70%;
+    border-radius: 50%;
 }
 
 .slide-menu ul {
     list-style: none;
+    padding: 0;
+}
+
+.slide-menu .top-menu {
+    background-color: rgb(70, 70, 70);
+}
+
+.slide-menu li {
+    width: 100%;
+    text-align: left;
+    transition: background-color 0.3s ease;
 }
 
 .slide-menu a {
-    display: inline-block;
-    margin-bottom: 20px;
+    display: flex;
+    height: 100%;
+    padding: 5% 0;
+    align-items: center;
     text-decoration: none;
-    color: black;
+    color: white;
+    padding-left: 10%;
+}
+
+.slide-menu a span {
+    margin-left: 10%;
+}
+
+.slide-menu li:not(:first-child):hover {
+    background-color: rgb(99, 94, 94);
 }
 
 .menu.open .slide-menu {
     right: 0;
+    z-index: 4;
 }
 
 /* 
@@ -275,12 +333,12 @@ section {
 }
 
 .socials a.linkedin {
-    background: url("../img/linkedin.png") no-repeat center;
+    background: url("../img/linkedin.svg") no-repeat center;
     background-size: 75%;
 }
 
 a.github {
-    background: url("../img/github.png") no-repeat center;
+    background: url("../img/github.svg") no-repeat center;
     background-size: 75%;
 }
 
