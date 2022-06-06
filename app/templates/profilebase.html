@@ -15,6 +15,7 @@
         rel="stylesheet">
 
     <link lang='sass' rel="stylesheet" href="../static/styles/main.css">
+    <link rel="stylesheet" href="../static/styles/hobbies.css">
     <link rel="stylesheet" href="../static/styles/skills.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
         integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
@@ -149,6 +150,15 @@
                     {{ activities }}
                     <!-- Input data -->
                 </p>
+            </div>
+        </section>
+
+        <!-- New section for hobbies -->
+        <section class="hobbies-container" id="hobbies">
+            <div class="hobbies">
+                <h2>My Hobbies</h2>
+                {% block hobbies %}
+                {% endblock %}
             </div>
         </section>
 
