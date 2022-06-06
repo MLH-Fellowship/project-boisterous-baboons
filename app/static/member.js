@@ -8,6 +8,33 @@ burgerButton.addEventListener('click', () => {
     menu.classList.toggle('open');
 })
 
+const slideMenu = document.querySelector('.slide-menu');
+
+slideMenu.addEventListener('click', (e) => {
+    e.preventDefault();
+    const link = e.target.closest('li');
+    if (link?.classList.contains('nav__link')) {
+        const id = link.querySelector('a').getAttribute('href');
+        document.querySelector(id).scrollIntoView({
+            behavior: 'smooth'
+        })
+    }
+})
+
+////////////////////////////////////////////////////////////
+// Reveal Elements on Scroll
+const sections = document.querySelectorAll('section:not(:first-child)');
+console.log(sections);
+
+const revealSection = function () {
+
+}
+
+const sectionObserver = new IntersectionObserver(revealSection, {});
+
+sections.forEach((section) => {
+    sectionObserver.observe(section);
+})
 
 ////////////////////////////////////////////////////////////
 // Map
