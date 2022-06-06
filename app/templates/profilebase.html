@@ -153,16 +153,6 @@
             </div>
         </section>
 
-        <!-- New section for hobbies -->
-        <section class="hobbies-container" id="hobbies"
-        style="background-image: url('../static/img/waves/{{member}}_background2.svg');">
-            <div class="hobbies">
-                <h2>My Hobbies</h2>
-                {% block hobbies %}
-                {% endblock %}
-            </div>
-        </section>
-
         <section class="experiences-container" id="experiences"
             style="background-image: url('../static/img/waves/{{member}}_background3.svg');">
             <div class="experiences">
@@ -201,6 +191,16 @@
             </div>
         </section>
 
+        <!-- New section for hobbies -->
+        <section class="hobbies-container" id="hobbies"
+        style="background-image: url('../static/img/waves/{{member}}_background2.svg');">
+            <div class="hobbies">
+                <h2>My Hobbies</h2>
+                {% block hobbies %}
+                {% endblock %}
+            </div>
+        </section>
+        
         <section class="map" id="locations"
             style="background-image: url('../static/img/waves/{{member}}_background6.svg');">
             <div class="load-map">
