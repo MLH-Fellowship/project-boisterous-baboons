@@ -32,7 +32,6 @@ sections.forEach((section) => {
 
 const revealSection = function (entries) {
     entries.forEach((entry) => {
-        console.log(entry);
         if (entry.isIntersecting) {
             entry.target.querySelectorAll('div').forEach((card) => card.classList.remove('hide-card'))
         } else {

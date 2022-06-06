@@ -103,15 +103,17 @@
         </div>
     </nav>
     <div class="snap-scroll-container">
-        <section class="profile" id="profile">
+        <section class="profile" id="profile"
+            style="background-image: url('../static/img/waves/{{member}}_background1.svg');">
             {% block intro %}{% endblock %}
             <img src="../static/img/{{ member }}profile.jpg">
-            {% block waves%}
+            {% block wave1_bottom%}
 
             {% endblock %}
         </section>
 
-        <section class="about-edu-container" id="about-edu">
+        <section class="about-edu-container" id="about-edu"
+            style="background-image: url('../static/img/waves/{{member}}_background2.svg');">
             <!-- START OF ABOUT/EDU -->
             <div class="about">
                 <!-- ABOUT MYSELF -->
@@ -150,7 +152,8 @@
             </div>
         </section>
 
-        <section class="experiences-container" id="experiences">
+        <section class="experiences-container" id="experiences"
+            style="background-image: url('../static/img/waves/{{member}}_background3.svg');">
             <div class="experiences">
                 <h2>Where I've Worked</h2>
                 <p>
@@ -162,7 +165,8 @@
             </div>
         </section>
 
-        <section class="projects-container" id="projects">
+        <section class="projects-container" id="projects"
+            style="background-image: url('../static/img/waves/{{member}}_background4.svg');">
             <div>
                 <!-- Added div to fix projects for scroll feature - noah -->
                 <h2>{{ firstname }} Workshop</h2>
@@ -180,7 +184,8 @@
         </section>
 
         <!-- Adding new section container for skills; copeied experiences for testing -->
-        <section class="skills-container" id="skills">
+        <section class="skills-container" id="skills"
+            style="background-image: url('../static/img/waves/{{member}}_background5.svg');">
             <div class="skills">
                 <h2>My Personal Tech Stack</h2>
                 {% block skills %}
@@ -189,7 +194,8 @@
             </div>
         </section>
 
-        <section class="map" id="locations">
+        <section class="map" id="locations"
+            style="background-image: url('../static/img/waves/{{member}}_background6.svg');">
             <div class="load-map">
                 <h1 class="map-label">Where I've Been</h1>
                 <div id="map"></div>
