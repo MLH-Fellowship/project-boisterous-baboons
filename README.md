@@ -1,47 +1,34 @@
-# Production Engineering - Week 1 - Portfolio Site
+# **Boisterous Baboons Portfolio Site**
 
-Welcome to the MLH Fellowship! During Week 1, you'll be working with Flask to build a portfolio site. This site will be the foundation for activities we do in future weeks so spend time this week making it your own and reflect your personality!
+This portfolio website allows users to learn more about the members of Boisterous Baboons, such as about each member's education, work experience, projects, skills, hobbies, and travel experiences.
 
-## Tasks
+## Our Stack
 
-Once you've got your portfolio downloaded and running using the instructions below, you should attempt to complete the following tasks.
+This website was built using HTML, Jinja2, CSS, and Javascript on the front-end, and the back-end was built using Python and Flask. We also used the particles.js and leaflet.js frameworks to add some of the design features.
 
-For each of these tasks, you should create an [Issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues) and work on them in a new [branch](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches). When the task has been completed, you should open a [Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) and get another fellow in your pod to give you feedback before merging it in.
+## Demo
 
-*Note: Make sure to include a link to the Issue you're working on inside of your Pull Request so your reviewer knows what you're working on!*
-
-### GitHub Tasks
-- [x] Create Issues for each task below
-- [x] Work on each task in a new branch
-- [x] Open a Pull Request when a task is finished to get feedback
-
-### Portfolio Tasks
-- [x] Add a photo of yourself to the website
-- [x] Add an "About youself" section to the website.
-- [x] Add your previous work experiences
-- [x] Add your hobbies (including images)
-- [x] Add your current/previous education
-- [x] Add a map of all the cool locations/countries you visited
-
-### Flask Tasks
-- [x] Get your Flask app running locally on your machine using the instructions below.
-- [x] Add a template for adding multiple work experiences/education/hobbies using [Jinja](https://jinja.palletsprojects.com/en/3.0.x/api/#basics)
-- [x] Create a new page to display hobbies.
-- [x] Add a menu bar that dynamically displays other pages in the app
-
+[Watch Our Demo on YouTube!](https://youtu.be/y-RejqP_u1c)
 
 ## Getting Started
 
-You don't need to submit any pull requests to thie repository. You need to do all your work here.
+Currently you can only see the website on a local server (It is recommended to use the VSCode IDE).
+
+The first step is to clone the repository onto your local machine:
+```bash
+$ git clone https://github.com/MLH-Fellowship/project-boisterous-baboons.git
+```
+
+Now follow the installation and usage steps below to render the website!
 
 ## Installation
 
 Make sure you have python3 and pip installed
 
-Create and activate virtual environment using virtualenv
+Create and activate virtual environment using virtualenv:
 ```bash
-$ python -m venv python3-virtualenv
-$ source python3-virtualenv/bin/activate
+$ virtualenv env
+$ source env/bin/activate
 ```
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install all dependencies!
@@ -52,9 +39,14 @@ pip install -r requirements.txt
 
 ## Usage
 
-Create a .env file using the example.env template (make a copy using the variables inside of the template)
+Now check out the main branch if you aren’t already on it:
+```bash
+$ git checkout main
+```
 
-Start flask development server
+Create a .env file and add the variable: URL=localhost:5000
+
+Start flask development server:
 ```bash
 $ export FLASK_ENV=development
 $ flask run
@@ -70,10 +62,14 @@ You should get a response like this in the terminal:
 
 You'll now be able to access the website at `localhost:5000` or `127.0.0.1:5000` in the browser! 
 
-*Note: The portfolio site will only work on your local machine while you have it running inside of your terminal. We'll go through how to host it in the cloud in the next few weeks!* 
+*Note: The portfolio site will only work on your local machine while you have it running inside of your terminal. It will be hosted in the cloud soon so stay tuned!* 
+
+## Troubleshooting
+
+1. Make sure that you do not have any other environments open in the background when creating the virtual environment. This will prevent you from rendering the site. 
+
+2. If the localhost:5000/ is in use then make sure to kill the application that is using the local server in the background or change the port to another by modifying the URL environment variable located in the .env file you created (Ex: URL=localhost:5001 instead of URL=localhost:5000)
 
 ## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
+Contributions to this project are [released](https://help.github.com/articles/github-terms-of-service/#6-contributions-under-repository-license) to the public under the [project's open source license](LICENSE).

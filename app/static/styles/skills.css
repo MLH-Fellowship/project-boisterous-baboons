@@ -1,0 +1,53 @@
+/* New CSS file to hold stylings and animations for skills section*/
+
+:root {
+    --skill-order: 0;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.skills {
+    color: white;
+    background: none;
+    border: 2px solid white;
+    width: 70%;
+    border-radius: 10px;
+}
+
+.skills h2 {
+    font-size: 50px;
+    text-align: center;
+}
+
+.skills p {
+    font-size: 20px;
+    margin-left: 30px;
+    margin-right: 30px
+}
+
+svg.skill-imgs {
+    overflow: visible;
+    padding: 20px 0;
+}
+
+svg.skill-imgs g {
+    animation: float 3s ease calc(var(--skill-order) * 200ms) infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(-3px);
+    }
+
+    50% {
+        transform: translateY(3px);
+    }
+
+    100% {
+        transform: translateY(-3px);
+    }
+}

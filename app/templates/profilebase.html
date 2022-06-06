@@ -14,27 +14,211 @@
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
 
-    <link lang='sass' rel="stylesheet" href="./static/styles/main.css">
-    <link rel='icon' href='./static/img/favicon.ico' type='image/x-icon' />
-    <title>{{ title }}</title>
+    <link lang='sass' rel="stylesheet" href="../static/styles/main.css">
+    <link rel="stylesheet" href="../static/styles/hobbies.css">
+    <link rel="stylesheet" href="../static/styles/skills.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+        integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+        crossorigin="" />
+    <script defer src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+        integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+        crossorigin=""></script>
+    <link rel='icon' href='../static/img/favicon.ico' type='image/x-icon' />
+    <title>{{ name }}</title>
 </head>
 
 <body>
-    <header class="nav-bar">
-        <div class="nav-content">
-            <a href="/"> 
-                <div class="nav-logo">
-                    <img src="./static/img/logo.svg" />
-                </div>
-            </a>
+    <nav>
+        <div class="members">
+            <a href="/">Home</a> <!-- changed to home button instead of logo -->
+            <a href="/member/juan">Juan</a>
+            <a href="/member/noah">Noah</a>
+            <a href="/member/malik">Malik</a>
         </div>
-    </header>
+        <div class="menu">
+            <div class="burger-button">
+                <div class="burger">
 
-    <div class="profile">
-        <div id="profile-picture" class="profile-picture">
-            <img src="./static/img/noahprofile.jpg">
+                </div>
+            </div>
+            <div class="slide-menu">
+                <ul>
+                    <li class="menu-profile">
+                        <div class="profile-pic">
+                            <img src="../static/img/{{member}}profile.jpg" alt="{{member}}">
+                            <h3>{{name}}</h3>
+                        </div>
+                    </li>
+                    <li class="nav__link"><a href="#profile"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M6 6C7.65685 6 9 4.65685 9 3C9 1.34315 7.65685 0 6 0C4.34315 0 3 1.34315 3 3C3 4.65685 4.34315 6 6 6ZM8 3C8 4.10457 7.10457 5 6 5C4.89543 5 4 4.10457 4 3C4 1.89543 4.89543 1 6 1C7.10457 1 8 1.89543 8 3Z"
+                                    fill="white" />
+                                <path
+                                    d="M12 11C12 12 11 12 11 12H1C1 12 0 12 0 11C0 10 1 7 6 7C11 7 12 10 12 11ZM11 10.9965C10.9986 10.7497 10.8462 10.0104 10.1679 9.33211C9.51563 8.67985 8.2891 8 5.99999 8C3.71088 8 2.48435 8.67985 1.8321 9.33211C1.15375 10.0104 1.00142 10.7497 1 10.9965H11Z"
+                                    fill="white" />
+                            </svg>
+                            <span>Introduction</span></a></li>
+                    <li class="nav__link"><a href="#about-edu"><svg width="16" height="16" viewBox="0 0 16 16"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M1 2.82757C1.88498 2.4578 3.1539 2.05944 4.38768 1.935C5.71799 1.80082 6.8464 1.99809 7.5 2.68671V12.4326C6.56511 11.9025 5.38065 11.8298 4.28732 11.9401C3.10693 12.0591 1.91771 12.4011 1 12.751V2.82757ZM8.5 2.68671C9.1536 1.99809 10.282 1.80082 11.6123 1.935C12.8461 2.05944 14.115 2.4578 15 2.82757V12.751C14.0823 12.4011 12.8931 12.0591 11.7127 11.9401C10.6194 11.8298 9.43489 11.9025 8.5 12.4326V2.68671ZM8 1.78306C7.01509 0.936466 5.58683 0.808974 4.28732 0.940049C2.77322 1.09277 1.24459 1.61235 0.293099 2.04484C0.114601 2.12598 0 2.30395 0 2.50002V13.5C0 13.67 0.0863761 13.8284 0.229307 13.9204C0.372238 14.0125 0.55214 14.0256 0.706901 13.9552C1.58875 13.5544 3.01012 13.074 4.38768 12.935C5.79565 12.793 6.97747 13.0223 7.60957 13.8124C7.70445 13.931 7.84811 14 8 14C8.15189 14 8.29555 13.931 8.39043 13.8124C9.02253 13.0223 10.2043 12.793 11.6123 12.935C12.9899 13.074 14.4113 13.5544 15.2931 13.9552C15.4479 14.0256 15.6278 14.0125 15.7707 13.9204C15.9136 13.8284 16 13.67 16 13.5V2.50002C16 2.30395 15.8854 2.12598 15.7069 2.04484C14.7554 1.61235 13.2268 1.09277 11.7127 0.940049C10.4132 0.808974 8.98491 0.936466 8 1.78306Z"
+                                    fill="white" />
+                            </svg>
+                            <span>About & Education</span></a></li>
+                    <li class="nav__link"><a href="#experiences"><svg width="16" height="16" viewBox="0 0 16 16"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M6.5 1C5.67173 1 5 1.67117 5 2.49976V3H1.5C0.671573 3 0 3.67157 0 4.5V12.5C0 13.3284 0.671573 14 1.5 14H14.5C15.3284 14 16 13.3284 16 12.5V4.5C16 3.67157 15.3284 3 14.5 3H11V2.49976C11 1.67117 10.3283 1 9.5 1H6.5ZM6.5 2H9.5C9.7763 2 10 2.22463 10 2.50061V3H6V2.49976C6 2.22377 6.2237 2 6.5 2ZM8.38649 8.91441L15 7.15081V12.5C15 12.7761 14.7761 13 14.5 13H1.5C1.22386 13 1 12.7761 1 12.5V7.15081L7.61351 8.91441C7.86674 8.98194 8.13326 8.98194 8.38649 8.91441ZM1.5 4H14.5C14.7761 4 15 4.22386 15 4.5V6.11586L8.12883 7.94817C8.04442 7.97068 7.95558 7.97068 7.87117 7.94817L1 6.11586V4.5C1 4.22386 1.22386 4 1.5 4Z"
+                                    fill="white" />
+                            </svg>
+                            <span>Experience</span></a></li>
+                    <li class="nav__link"><a href="#projects"><svg width="16" height="16" viewBox="0 0 16 16"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13.5 3C13.7761 3 14 3.22386 14 3.5V11H2V3.5C2 3.22386 2.22386 3 2.5 3H13.5ZM2.5 2C1.67157 2 1 2.67157 1 3.5V12H15V3.5C15 2.67157 14.3284 2 13.5 2H2.5Z"
+                                    fill="white" />
+                                <path d="M0 12.5H16C16 13.3284 15.3284 14 14.5 14H1.5C0.671573 14 0 13.3284 0 12.5Z"
+                                    fill="white" />
+                            </svg> <span>Projects</span></a></li>
+                    <li class="nav__link"><a href="#skills"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M1 0L0 1L2.20088 4.08124C2.3886 4.34403 2.69167 4.5 3.01462 4.5H3.08579C3.351 4.5 3.60536 4.60536 3.79289 4.79289L6.46789 7.46789L3.85099 10.1224C3.58121 10.0428 3.2956 10 3 10C1.34315 10 0 11.3431 0 13C0 14.6569 1.34315 16 3 16C4.65685 16 6 14.6569 6 13C6 12.7044 5.95725 12.4188 5.87759 12.149L8.53212 9.53212L9.5 10.5L9.19544 11.4137C9.07566 11.773 9.16918 12.1692 9.43702 12.437L12.7071 15.7071C12.9024 15.9024 13.1583 16 13.4142 16C13.6701 16 13.9261 15.9024 14.1213 15.7071L15.7071 14.1213C15.9024 13.9261 16 13.6701 16 13.4142C16 13.1583 15.9024 12.9024 15.7071 12.7071L12.437 9.43702C12.1692 9.16918 11.773 9.07566 11.4137 9.19544L10.5 9.5L9.53926 8.53926L12.2191 5.89737C12.4681 5.9643 12.7299 6 13 6C14.6569 6 16 4.65685 16 3C16 2.73126 15.9647 2.47078 15.8984 2.22294L13.7574 4.36396L12 3.99998L11.636 2.24264L13.7771 0.101615C13.5292 0.0353359 13.2687 0 13 0C11.3431 0 10 1.34315 10 3C10 3.27012 10.0357 3.53191 10.1026 3.78089L7.46076 6.46075L4.79289 3.79289C4.60536 3.60536 4.5 3.351 4.5 3.08579V3.01462C4.5 2.69167 4.34403 2.3886 4.08124 2.20088L1 0ZM10.6464 10.6464C10.8417 10.4512 11.1583 10.4512 11.3536 10.6464L14.2678 13.5607C14.463 13.7559 14.463 14.0725 14.2678 14.2678C14.0725 14.463 13.7559 14.463 13.5607 14.2678L10.6464 11.3536C10.4512 11.1583 10.4512 10.8417 10.6464 10.6464ZM3 11L3.47105 11.242L4 11.2679L4.28693 11.713L4.73205 12L4.75799 12.5289L5 13L4.75799 13.471L4.73205 14L4.28693 14.2869L4 14.732L3.47105 14.758L3 15L2.52895 14.758L2 14.732L1.71307 14.2869L1.26795 14L1.24202 13.471L1 13L1.24202 12.5289L1.26795 12L1.71307 11.713L2 11.2679L2.52895 11.242L3 11Z"
+                                    fill="white" />
+                            </svg>
+                            <span>Tools & Technologies</span> </a></li>
+                    <li class="nav__link"><a href="#hobbies"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M8 3C5.23858 3 3 5.23858 3 8V9H4C4.55228 9 5 9.44771 5 10V13C5 13.5523 4.55228 14 4 14H3C2.44772 14 2 13.5523 2 13V8C2 4.68629 4.68629 2 8 2C11.3137 2 14 4.68629 14 8V13C14 13.5523 13.5523 14 13 14H12C11.4477 14 11 13.5523 11 13V10C11 9.44771 11.4477 9 12 9H13V8C13 5.23858 10.7614 3 8 3Z"
+                                    fill="white" />
+                            </svg>
+                            <span>Hobbies</span></a></li>
+                    <li class="nav__link"><a href="#locations"><svg width="16" height="16" viewBox="0 0 16 16"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M3.1 11.2C3.19443 11.0741 3.34262 11 3.5 11H6C6.27615 11 6.5 11.2239 6.5 11.5C6.5 11.7761 6.27615 12 6 12H3.75L1.5 15H14.5L12.25 12H10C9.72386 12 9.5 11.7761 9.5 11.5C9.5 11.2239 9.72386 11 10 11H12.5C12.6574 11 12.8056 11.0741 12.9 11.2L15.9 15.2C16.0136 15.3515 16.0319 15.5542 15.9472 15.7236C15.8625 15.893 15.6894 16 15.5 16H0.500003C0.310617 16 0.137485 15.893 0.0527893 15.7236C-0.0319067 15.5542 -0.0136288 15.3515 0.100003 15.2L3.1 11.2Z"
+                                    fill="white" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M8 1C6.34315 1 5 2.34315 5 4C5 5.65685 6.34315 7 8 7C9.65686 7 11 5.65685 11 4C11 2.34315 9.65686 1 8 1ZM4 4C4 1.79086 5.79086 0 8 0C10.2091 0 12 1.79086 12 4C12 6.03981 10.4732 7.723 8.5 7.96905V13.5C8.5 13.7761 8.27615 14 8 14C7.72386 14 7.5 13.7761 7.5 13.5V7.96905C5.52685 7.723 4 6.03981 4 4Z"
+                                    fill="white" />
+                            </svg>
+
+                            <span>Where I've Been</span></a></li>
+                </ul>
+            </div>
         </div>
-        <h1>{{ title }}</h1>
+    </nav>
+    <div class="snap-scroll-container">
+        <section class="profile" id="profile"
+            style="background-image: url('../static/img/waves/{{member}}_background1.svg');">
+            {% block intro %}{% endblock %}
+            <img src="../static/img/{{ member }}profile.jpg">
+            {% block wave1_bottom%}
+
+            {% endblock %}
+        </section>
+
+        <section class="about-edu-container" id="about-edu"
+            style="background-image: url('../static/img/waves/{{member}}_background2.svg');">
+            <!-- START OF ABOUT/EDU -->
+            <div class="about">
+                <!-- ABOUT MYSELF -->
+                <h2>About Me</h2>
+                <p>
+                    <!-- Input data -->
+                    {{ about }}
+                </p>
+            </div>
+            <div class="edu">
+                <!-- EDUCATION -->
+                <h2>Education</h2>
+                <div class="arrange-horizontally">
+                    <div class="edu-image">
+                        <img src="../static/img/{{ seal }}-seal.jpg"> <!-- Input data -->
+                    </div>
+                    <div class="university-info">
+                        <p class="university-name">
+                            {{ university }}
+                            <!-- Input data -->
+                        </p>
+                        <p class="degree">
+                            {{ degree }}
+                            <!-- Input data -->
+                        </p>
+                        <p class="year">
+                            {{ years }}
+                            <!-- Input data -->
+                        </p>
+                    </div>
+                </div>
+                <p class="activites">
+                    {{ activities }}
+                    <!-- Input data -->
+                </p>
+            </div>
+        </section>
+
+        <section class="experiences-container" id="experiences"
+            style="background-image: url('../static/img/waves/{{member}}_background3.svg');">
+            <div class="experiences">
+                <h2>Where I've Worked</h2>
+                {% block experiences %}
+                {% endblock %}
+            </div>
+        </section>
+
+        <section class="projects-container" id="projects"
+            style="background-image: url('../static/img/waves/{{member}}_background4.svg');">
+            <div>
+                <!-- Added div to fix projects for scroll feature - noah -->
+                <h2>{{ firstname }} Workshop</h2>
+                <div class="projects">
+                    <div class="first">
+                        {% block first %}
+                        {% endblock %}
+                    </div>
+                    <div class="second">
+                        {% block second %}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Adding new section container for skills; copeied experiences for testing -->
+        <section class="skills-container" id="skills"
+            style="background-image: url('../static/img/waves/{{member}}_background5.svg');">
+            <div class="skills">
+                <h2>My Personal Tech Stack</h2>
+                {% block skills %}
+                <!-- pass SVG of skills through respective pages -->
+                {% endblock %}
+            </div>
+        </section>
+
+        <!-- New section for hobbies -->
+        <section class="hobbies-container" id="hobbies"
+            style="background-image: url('../static/img/waves/{{member}}_background6.svg');">
+            <div class="hobbies">
+                <h2>My Hobbies</h2>
+                {% block hobbies %}
+                {% endblock %}
+            </div>
+        </section>
+
+        <section class="map" id="locations"
+            style="background-image: url('../static/img/waves/{{member}}_background1.svg');">
+            <div class="load-map">
+                <h1 class="map-label">Where I've Been</h1>
+                <div id="map"></div>
+            </div>
+        </section>
     </div>
+
 </body>
+
+<script defer src="../static/member.js"></script>
+
 </html>
