@@ -124,6 +124,11 @@ body {
     margin-top: 20px;
 }
 
+h1, #baboons {
+    font-size: 60px;
+    color: white;
+}
+
 .person {
     display: inline-block;
     text-align: center;
