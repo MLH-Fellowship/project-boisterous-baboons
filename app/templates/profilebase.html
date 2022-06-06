@@ -88,6 +88,13 @@
                                     fill="white" />
                             </svg>
                             <span>Tools & Technologies</span> </a></li>
+                    <li class="nav__link"><a href="#hobbies"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M8 3C5.23858 3 3 5.23858 3 8V9H4C4.55228 9 5 9.44771 5 10V13C5 13.5523 4.55228 14 4 14H3C2.44772 14 2 13.5523 2 13V8C2 4.68629 4.68629 2 8 2C11.3137 2 14 4.68629 14 8V13C14 13.5523 13.5523 14 13 14H12C11.4477 14 11 13.5523 11 13V10C11 9.44771 11.4477 9 12 9H13V8C13 5.23858 10.7614 3 8 3Z"
+                                    fill="white" />
+                            </svg>
+                            <span>Hobbies</span></a></li>
                     <li class="nav__link"><a href="#locations"><svg width="16" height="16" viewBox="0 0 16 16"
                                 fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -157,7 +164,7 @@
             style="background-image: url('../static/img/waves/{{member}}_background3.svg');">
             <div class="experiences">
                 <h2>Where I've Worked</h2>
-                {% block experiences %} 
+                {% block experiences %}
                 {% endblock %}
             </div>
         </section>
@@ -193,16 +200,16 @@
 
         <!-- New section for hobbies -->
         <section class="hobbies-container" id="hobbies"
-        style="background-image: url('../static/img/waves/{{member}}_background2.svg');">
+            style="background-image: url('../static/img/waves/{{member}}_background6.svg');">
             <div class="hobbies">
                 <h2>My Hobbies</h2>
                 {% block hobbies %}
                 {% endblock %}
             </div>
         </section>
-        
+
         <section class="map" id="locations"
-            style="background-image: url('../static/img/waves/{{member}}_background6.svg');">
+            style="background-image: url('../static/img/waves/{{member}}_background1.svg');">
             <div class="load-map">
                 <h1 class="map-label">Where I've Been</h1>
                 <div id="map"></div>
