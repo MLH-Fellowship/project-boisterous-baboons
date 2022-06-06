@@ -1,0 +1,19 @@
+.hobbies-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hobbies {
+    color: white;
+    background: none;
+    border: 2px solid white;
+    width: 70%;
+    border-radius: 10px;
+    padding-bottom: 25px;
+}
+
+.hobbies h2 {
+    font-size: 50px;
+    text-align: center;
+}
