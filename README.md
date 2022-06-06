@@ -6,6 +6,10 @@ This portfolio website allows users to learn more about the members of Boisterou
 
 This website was built using HTML, Jinja2, CSS, and Javascript on the front-end, and the back-end was built using Python and Flask. We also used the particles.js and leaflet.js frameworks to add some of the design features.
 
+## Demo
+
+[Watch Our Demo on YouTube!](https://youtu.be/y-RejqP_u1c)
+
 ## Getting Started
 
 Currently you can only see the website on a local server (It is recommended to use the VSCode IDE).
