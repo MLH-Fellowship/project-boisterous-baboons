@@ -45,13 +45,11 @@ team = {'juan': {"firstname": "Juan's",
         }
 
 
+
+
+
 @app.route('/')
-def index():
-    return render_template('home.html', title="MLH Fellow", url=os.getenv("URL"))
-
-
-@app.route('/member/<member>')
-def member(member):
+def member(member="malik"):
     person = team[member]
     return render_template(f'{member}.html',
                            title="MLH Fellow",
