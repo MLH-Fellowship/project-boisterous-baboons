@@ -2,10 +2,12 @@ import os
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
 from peewee import *
+import datetime
 
 load_dotenv()
 app = Flask(__name__)
 
+# MySQL setup with peewee
 mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
             user=os.getenv("MYSQL_USER"),
             password=os.getenv("MYSQL_PASSWORD"),
@@ -13,9 +15,21 @@ mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
             port=3306
 )   
 
-print(mydb)
+# New DB table
+class TimelinePost(Model):
+    name = CharField()
+    email = CharField()
+    content = TextField()
+    created_at = DateTimeField(default=datetime.datetime.now)
 
-team = {'malik': {"firstname": "Malik's",
+    class Meta:
+        database = mydb
+
+mydb.connect()
+mydb.create_tables([TimelinePost]) 
+
+# Dictionary holding personal info
+mydata = {'malik': {"firstname": "Malik's",
                   "name": "Malik Baker", 
                   "university": "Boston University", 
                   "degree": "BA, Computer Science", 
@@ -29,9 +43,10 @@ team = {'malik': {"firstname": "Malik's",
                   "seal": "boston"}
         }
 
+# Routing data from dictionary to be displayed on page
 @app.route('/')
 def member(member="malik"):
-    person = team[member]
+    person = mydata[member]
     return render_template(f'{member}.html',
                            title="MLH Fellow",
                            name=person["name"],
@@ -48,8 +63,4 @@ def member(member="malik"):
                            firstname=person["firstname"])
 
 
-@app.route('/visited/<member>')
-def visited(member):
-    person = team[member]
-    return person
 
