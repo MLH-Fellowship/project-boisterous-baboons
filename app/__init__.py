@@ -65,16 +65,16 @@ def member(member="malik"):
                            seal=person["seal"],
                            firstname=person["firstname"])
 
-
+# Basic POST request
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
     name = request.form['name']
     email = request.form['email']
     content = request.form['content']
     timeline_post = TimelinePost.create(name=name, email=email, content=content)
-
     return model_to_dict(timeline_post)
 
+# Basic GET request
 @app.route('/api/timeline_post', methods=['GET'])
 def get_time_line_post():
     return {
@@ -84,3 +84,15 @@ def get_time_line_post():
 TimelinePost.select().order_by(TimelinePost.created_at.desc())
         ]
     }
+
+# Get request for specified id
+@app.route('/api/timeline_post/<id>', methods=['GET'])
+def get_time_line_post_by_id(id):
+    p = TimelinePost.get_by_id(id)
+    return model_to_dict(p)
+
+@app.route('/api/timeline_post/<id>', methods=['DELETE'])
+def delete_time_line_post_by_id(id):
+    p = TimelinePost.get_by_id(id)
+    p.delete_instance()
+    return "Deleted post with id "+str(id)+"\n"
