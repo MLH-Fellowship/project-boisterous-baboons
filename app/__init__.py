@@ -85,13 +85,14 @@ TimelinePost.select().order_by(TimelinePost.created_at.desc())
         ]
     }
 
-# Get request for
-@app.route('/api/timeline_post?<id>', methods=['GET'])
+# Get request for specified id
+@app.route('/api/timeline_post/<id>', methods=['GET'])
 def get_time_line_post_by_id(id):
-    return {
-        'timeline_posts': [
-            model_to_dict(p)
-            for p in
-TimelinePost.select()
-        ]
-    }
+    p = TimelinePost.get_by_id(id)
+    return model_to_dict(p)
+
+@app.route('/api/timeline_post/<id>', methods=['DELETE'])
+def delete_time_line_post_by_id(id):
+    p = TimelinePost.get_by_id(id)
+    p.delete_instance()
+    return "Deleted post with id "+str(id)+"\n"
