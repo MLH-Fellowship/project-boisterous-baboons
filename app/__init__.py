@@ -26,6 +26,8 @@ class TimelinePost(Model):
     class Meta:
         database = mydb
 
+print(mydb)
+
 mydb.connect()
 mydb.create_tables([TimelinePost]) 
 
