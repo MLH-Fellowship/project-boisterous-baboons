@@ -9,6 +9,10 @@ const form = document.getElementById('post-form');
             body:payload,
         })
         .then(res => res.json())
-        .then(data => console.log(data))
-        form.reset();
+        .then(data => {
+            console.log(data);
+            form.reset();
+            location.reload();
+        })
+        
     })
