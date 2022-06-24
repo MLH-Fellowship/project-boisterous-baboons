@@ -17,6 +17,7 @@ mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
 )   
 
 # New DB table
+# REST API??
 class TimelinePost(Model):
     name = CharField()
     email = CharField()
@@ -64,6 +65,11 @@ def member(member="malik"):
                            about=person["about"],
                            seal=person["seal"],
                            firstname=person["firstname"])
+
+# New route for timeline page
+@app.route('/timeline')
+def timeline():
+    return render_template('timeline.html', title='Timeline')
 
 # Basic POST request
 @app.route('/api/timeline_post', methods=['POST'])
