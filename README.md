@@ -1,14 +1,10 @@
-# **Boisterous Baboons Portfolio Site**
+# **MLH Fellowship Portfolio Site Project**
 
-This portfolio website allows users to learn more about the members of Boisterous Baboons, such as about each member's education, work experience, projects, skills, hobbies, and travel experiences.
+This portfolio website serves a template for a simple portfolio site, and gives us a place to test the various Production Engineering skills we learn throughout the fellowship.
 
 ## Our Stack
 
-This website was built using HTML, Jinja2, CSS, and Javascript on the front-end, and the back-end was built using Python and Flask. We also used the particles.js and leaflet.js frameworks to add some of the design features.
-
-## Demo
-
-[Watch Our Demo on YouTube!](https://youtu.be/y-RejqP_u1c)
+This website was built using HTML, Jinja2, CSS, and Javascript on the front-end, and the back-end was built using Python and Flask. This project also utilizes a MySQL database server, which is required for testing and deployment.
 
 ## Getting Started
 
@@ -16,7 +12,7 @@ Currently you can only see the website on a local server (It is recommended to u
 
 The first step is to clone the repository onto your local machine:
 ```bash
-$ git clone https://github.com/MLH-Fellowship/project-boisterous-baboons.git
+$ git clone https://github.com/malbaker/flask-project.git
 ```
 
 Now follow the installation and usage steps below to render the website!
@@ -25,16 +21,20 @@ Now follow the installation and usage steps below to render the website!
 
 Make sure you have python3 and pip installed
 
-Create and activate virtual environment using virtualenv:
+Create and activate virtual environment using venv. We will call our virtual environment `venv` for simplicity:
 ```bash
-$ virtualenv env
-$ source env/bin/activate
+$ python -m venv venv
+$ source venv/bin/activate
+```
+Make sure pip is on the latest available version by running the command:
+```bash
+$ pip install --upgrade pip
 ```
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install all dependencies!
+Now, use [pip](https://pip.pypa.io/en/stable/) to install all dependencies!
 
 ```bash
-pip install -r requirements.txt
+$ pip install -r requirements.txt
 ```
 
 ## Usage
@@ -44,11 +44,12 @@ Now check out the main branch if you aren’t already on it:
 $ git checkout main
 ```
 
-Create a .env file and add the variable: URL=localhost:5000
+Create a `.env` file based on `example.env` in your project root. Define the variable `URL=localhost:5000` for running the project locally. Be sure to fill out the details from your local MySQL server, or whatever platform you decide to use for a hosted DB.
 
-Start flask development server:
+Also set the variable `FLASK_ENV` to `development` for testing purposes.
+
+Start flask development server(your python venv should be active):
 ```bash
-$ export FLASK_ENV=development
 $ flask run
 ```
 
@@ -62,7 +63,7 @@ You should get a response like this in the terminal:
 
 You'll now be able to access the website at `localhost:5000` or `127.0.0.1:5000` in the browser! 
 
-*Note: The portfolio site will only work on your local machine while you have it running inside of your terminal. It will be hosted in the cloud soon so stay tuned!* 
+*Note: The portfolio site will only work on your local machine while you have it running inside of your terminal.* 
 
 ## Troubleshooting
 
