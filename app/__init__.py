@@ -1,4 +1,6 @@
+from crypt import methods
 import os
+from pdb import post_mortem
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
 from peewee import *
@@ -8,13 +10,17 @@ from playhouse.shortcuts import model_to_dict
 load_dotenv()
 app = Flask(__name__)
 
-# MySQL setup with peewee
-mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
+if os.getenv("TESTING") == "true":
+    print("Running in test mode")
+    mydb = SqliteDatabase('file:memory?mode-memory&cache=shared', uri=True)
+else:
+    # MySQL setup with peewee
+    mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
             user=os.getenv("MYSQL_USER"),
             password=os.getenv("MYSQL_PASSWORD"),
             host=os.getenv("MYSQL_HOST"),
             port=3306
-)   
+    )   
 
 # New DB table
 # REST API??
@@ -74,11 +80,21 @@ def timeline():
 # Basic POST request
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
-    name = request.form['name']
-    email = request.form['email']
-    content = request.form['content']
-    timeline_post = TimelinePost.create(name=name, email=email, content=content)
-    return model_to_dict(timeline_post)
+    if request.form.get('name') is None or request.form.get('name') == "":
+        return "Invalid name", 400
+    elif request.form.get('email') is None or request.form.get('email') == "" or "@" not in request.form.get('email'):
+        return "Invalid email", 400
+
+    elif request.form.get('content') is None or request.form.get('content') == "":
+        return "Invalid content", 400
+    
+    else:
+        name = request.form['name']
+        email = request.form['email']
+        content = request.form['content']
+
+        timeline_post = TimelinePost.create(name=name, email=email, content=content)
+        return model_to_dict(timeline_post)
 
 # Basic GET request
 @app.route('/api/timeline_post', methods=['GET'])
@@ -102,3 +118,4 @@ def delete_time_line_post_by_id(id):
     p = TimelinePost.get_by_id(id)
     p.delete_instance()
     return "Deleted post with id "+str(id)+"\n"
+    
