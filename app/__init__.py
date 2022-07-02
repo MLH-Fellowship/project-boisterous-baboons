@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 if os.getenv("TESTING") == "true":
     print("Running in test mode")
-    mydb = SqliteDatabase('file:memory?mode-memory&cache=shared', uri=True)
+    mydb = SqliteDatabase('file:memory?mode=memory&cache=shared', uri=True)
 else:
     # MySQL setup with peewee
     mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
