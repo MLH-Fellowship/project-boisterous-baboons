@@ -20,7 +20,7 @@ services:
   
   nginx:
     container_name: nginx
-    image: jonasl/nginx-certbot
+    image: jonasal/nginx-certbot
     restart: always
     environment:
       - CERTBOT_EMAIL=malikbaker75@gmail.com
