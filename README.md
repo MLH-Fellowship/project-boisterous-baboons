@@ -4,11 +4,9 @@ This portfolio website serves a template for a simple portfolio site, and gives 
 
 ## Our Stack
 
-This website was built using HTML, Jinja2, CSS, and Javascript on the front-end, and the back-end was built using Python and Flask. This project also utilizes a MySQL database server, which is required for testing and deployment.
+This website was built using HTML, Jinja2, CSS, and JavaScript on the front-end, and the back-end was built using Python and Flask. This project also utilizes a MySQL database server, which is required for testing and deployment. Docker can also be used to run this project(details below)
 
 ## Getting Started
-
-Currently you can only see the website on a local server (It is recommended to use the VSCode IDE).
 
 The first step is to clone the repository onto your local machine:
 ```bash
@@ -64,6 +62,17 @@ You should get a response like this in the terminal:
 You'll now be able to access the website at `localhost:5000` or `127.0.0.1:5000` in the browser! 
 
 *Note: The portfolio site will only work on your local machine while you have it running inside of your terminal.* 
+
+## Running with Docker
+
+The `Dockerfile` and `docker-compose` files are already written for this project, but can be edited for your purposes. You must have the Docker engine and docker-compose both installed and ready on your system.
+
+Here are the steps to run the website container and the mysql container with `docker-compose`:
+
+1. Set the `MYSQL_ROOT_PASSWORD` variable in your `.env` with a password. This will only be used for configuration with the mysql container.
+2. If running locally, simply run `docker compose up` and the Docker engine will recognize the `docker-compose.yml` file, and use `docker compose down` to stop all the containers. If running on a production server, we have configured `docker-compose.prod.yml` to also spin up and NGINX container for our web server. When running using a special docker compose file, we use the command `docker compose -f docker-compose.prod.yml up` and to shut them down we'd use the same command except with `down` at the end. 
+
+With docker compose you can also start up the containers with a `-d` flag that will run the containers in detached mode, so you can continue to use that terminal session
 
 ## Troubleshooting
 
