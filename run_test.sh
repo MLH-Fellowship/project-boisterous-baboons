@@ -1,4 +1,4 @@
 #!/bin/bash
 
-source python3-virtualenv/bin/activate
+source venv/bin/activate
 python -m unittest discover -v tests
